@@ -40,7 +40,7 @@ bordered {
 
 ```
 
-#### 背景
+### 背景
 
 ```css
 ackground-repeat: round. 
@@ -49,3 +49,16 @@ ackground-repeat: round.
 
 使用縮放或變形的方式，讓背景圖片在不裁切的情況下填滿空間。
 ```
+
+### animation
+
+縮寫順序：
+
+```diff
+animation: 
+name | duration | timing-function | delay | iteration-count direction | fill-mode | play-state;
+
++duration 在delay之前，有的會建議你不要縮寫
+```
+
+* JS. DOM [Style animationDelay Property](https://www.w3schools.com/jsref/prop\_style\_animationdelay.asp)
