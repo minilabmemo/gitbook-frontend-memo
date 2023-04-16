@@ -4,7 +4,7 @@ description: 設定
 
 # CSS設定
 
-#### 滑鼠的 cursor ​
+### 滑鼠的 cursor ​
 
 可以​禁用
 
@@ -14,7 +14,7 @@ description: 設定
 
 
 
-#### 語法sess ​中＆用法
+### 語法sess ​中＆用法
 
 ＆符號是什麼意思
 

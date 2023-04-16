@@ -6,9 +6,9 @@
 
 ## css
 
-* [CSS設定](css/css-she-ding.md)
-* [視差滾動/滑鼠滾動](css/shi-cha-gun-dong-hua-shu-gun-dong.md)
-* [上下位移](css/shang-xia-wei-yi.md)
+* [CSS設定](case/css-she-ding.md)
+* [視差滾動/滑鼠滾動](case/shi-cha-gun-dong-hua-shu-gun-dong.md)
+* [上下位移](case/shang-xia-wei-yi.md)
 
 ## tools
 
