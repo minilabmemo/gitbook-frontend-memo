@@ -21,4 +21,4 @@
 * [Emmet](tools/emmet.md)
 * [code snippet](tools/code-snippet.md)
 * [chrome](tools/chrome/README.md)
-  * [develop mode](tools/chrome/develop-mode.md)
+  * [DevTools](tools/chrome/devtools.md)
