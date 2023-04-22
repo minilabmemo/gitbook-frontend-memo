@@ -30,7 +30,9 @@ description: 滑鼠滾動
 
 #### figma 設計 Parallax-animation视差动画 - 夜空
 
-> 網路教學說明 [https://www.bilibili.com/video/BV1XG411E7Fv/](https://www.bilibili.com/video/BV1XG411E7Fv/)
+> 網路教學說明 figma视差动画 | 智能动画 | Smart Animate
+>
+> [//www.bilibili.com/video/BV1XG411E7Fv/](https://www.bilibili.com/video/BV1XG411E7Fv/)
 >
 > 由近到遠的感覺
 >
