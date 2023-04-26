@@ -23,3 +23,4 @@
 * [Emmet](tools/emmet.md)
 * [vscode](tools/vscode/README.md)
   * [code snippet](tools/code-snippet.md)
+* [deploy](tools/deploy.md)
