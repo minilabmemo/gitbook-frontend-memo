@@ -12,7 +12,6 @@
 
 ## tools
 
-* [deploy-github](tools/deploy-github.md)
 * [figma](tools/figma/README.md)
   * [插件工具](tools/figma/cha-jian-gong-ju.md)
   * [操作](tools/figma/cao-zuo.md)
@@ -23,4 +22,6 @@
 * [Emmet](tools/emmet.md)
 * [vscode](tools/vscode/README.md)
   * [code snippet](tools/code-snippet.md)
-* [deploy](tools/deploy.md)
+* [deploy](tools/deploy/README.md)
+  * [parcel](tools/deploy/parcel.md)
+  * [deploy-github](tools/deploy/deploy-github.md)
