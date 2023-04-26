@@ -24,4 +24,6 @@
   * [code snippet](tools/code-snippet.md)
 * [deploy](tools/deploy/README.md)
   * [parcel](tools/deploy/parcel.md)
-  * [deploy-github](tools/deploy/deploy-github.md)
+  * [deploy-github](tools/deploy-github.md)
+  * [docker](tools/deploy/docker.md)
+  * [run](tools/deploy/run.md)
