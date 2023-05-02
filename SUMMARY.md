@@ -9,6 +9,7 @@
 * [CSS設定](case/css-she-ding.md)
 * [視差滾動/滑鼠滾動](case/shi-cha-gun-dong-hua-shu-gun-dong.md)
 * [上下位移](case/shang-xia-wei-yi.md)
+* [行內與塊級](css/hang-nei-yu-kuai-ji.md)
 
 ## tools
 
