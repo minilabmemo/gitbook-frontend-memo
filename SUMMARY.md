@@ -4,6 +4,7 @@
 * [JS](js/README.md)
   * [document](js/document.md)
   * [作用域](js/zuo-yong-yu.md)
+  * [函式](js/han-shi.md)
 
 ## css
 
