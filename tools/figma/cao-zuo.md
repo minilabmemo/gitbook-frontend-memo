@@ -55,7 +55,11 @@ description: 操作
 超出frame的地方可以勾選裁切內容clip content，讓它顯示
 {% endhint %}
 
+圖片裁切
 
+點選圖片後第二個選項框選擇crop 就可以裁切了
+
+{% embed url="https://help.figma.com/hc/en-us/articles/360040675194-Crop-an-image-" %}
 
 #### 圖片融合 overlay
 
