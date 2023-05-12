@@ -33,7 +33,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(<h1> Hello world!</h1>,document.getElementById('root'));
 ```
 
-### 使用變數 const element = \<h1>Hello, {name}\</h1>;&#x20;
+### 使用變數 const element = ...;&#x20;
 
 ```diff
 +//一般javascript
