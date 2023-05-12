@@ -41,6 +41,10 @@ const name = 'Josh Perez';
 
 +//混和的 html 與字串 特殊JSX語法
 const element = <h1>Hello, {name}</h1>;  
+const element = <ChildComponent firstName="Aaron" lastName="Chen" />;
+function ChildComponent({ firstName, lastName }) {
+  return <h1>Hello, {firstName} {lastName}</h1>;    // Hello, Aaron Chen
+}
 
 + 把變數丟入render也可以
 ReactDOM.render(element,document.getElementById('root'));

@@ -16,6 +16,8 @@ description: 組件語法與基本生
 ```diff
 import ReactDOM from "react-dom";
 
+const App = 函式; 
+
 //JSX縮寫 直接用()
 - // const App = () => (
 - //     <div>256</div>
@@ -243,6 +245,59 @@ Ref:
   * 我們建議使用 exhaustive-deps 規則作為我們 eslint-plugin-react-hooks package 的一部分。當不正確地指定依賴時，它會發出警告，並提出修改建議。
 
 ***
+
+## 組件拆分
+
+設計思考：拆分成獨立的元件外，現在，我們要根據使用者輸入的值不同來呈現不同的畫面
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+### 範例：props的傳遞 與解構賦值
+
+```diff
+ 
+ // 使用 <div>  {element}</div>
+
+定義 const element = <ChildComponent firstName="Aaron" lastName="Chen" />;
+
+- function ChildComponent(props) {
+-   return <h1>Hello, {props.firstName} {props.lastName}</h1>;    // Hello, Aaron Chen
+- }
+
+ // 透過解構賦值把 props 內需要用到的變數取出
+ function ChildComponent(props) {
++   const { firstName, lastName } = props;
++   return <h1>Hello, {firstName} {lastName}</h1>;    // Hello, Aaron Chen
+ }
+
+ //更精簡到連 props 都不命名了: 透過解構賦值直接在「函式參數的地方」把需要用到的變數取出
+
++ function ChildComponent({ firstName, lastName }) {
++   return <h1>Hello, {firstName} {lastName}</h1>;    // Hello, Aaron Chen
+ }
+ 
+ 
+ //------------
+ 
+ <Counter startingValue={3} />
+ 
+ const Counter = (props) => {
+  // STEP 3: 使用解構賦值把 startingValue 從 props 中取出
+  const { startingValue } = props;
+    ...
+  return (
+   {/* ... */}
+  );
+};
+ 
+```
+
+{% hint style="info" %}
+參考[\[Day 10 - 網速換算器\] 換算起來吧 - 資料綁定與組件拆分](https://ithelp.ithome.com.tw/articles/10221113) \
+[\[Day 11 - 網速轉換器\] 那個...資料可以分享給我嗎 - 將資料傳入組件](https://ithelp.ithome.com.tw/articles/10221577)
+{% endhint %}
+
+## &#x20;<a href="#e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b" id="e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b"></a>
 
 ## 網路參考範例: <a href="#e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b" id="e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b"></a>
 
