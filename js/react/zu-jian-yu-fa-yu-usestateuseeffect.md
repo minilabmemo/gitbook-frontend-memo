@@ -10,8 +10,25 @@ description: 組件語法與基本生
 
 * component 就像是 JavaScript 的 function
 * ReactDOM.render 中{函式名稱}變成了<函式名稱/> see:[Render Element](https://zh-hant.reactjs.org/docs/rendering-elements.html)
-* Component 命名首字必須大寫，大寫駝峰的方式，否則 React 會把它當作一般的 HTML 元素處理，並跳出Warning提示，看到大寫駝峰命名變數時，可以知道是 React 組件而非一般函式。
+* <mark style="color:red;">Component 命名首字必須大寫，大寫駝峰的方式，否則 React 會把它當作一般的 HTML 元素處理</mark>，並跳出Warning提示，看到大寫駝峰命名變數時，可以知道是 React 組件而非一般函式。
 * 其他 HTML 屬性、CSS 樣式屬性或一般的函式來說，則會遵行 JavaScript 以小寫駝峰來命名變數的慣例，例如在 className、maxLength、backgroundColor 等等。
+
+```diff
+import ReactDOM from "react-dom";
+
+//JSX縮寫 直接用()
+- // const App = () => (
+- //     <div>256</div>
+- // );
+//JSX有變數時 改() => {}
++const App = () => {
++  const count = 256;
++  return (
++      <div>{count}</div>
+  );
++};
+ReactDOM.render(<App />, document.getElementById("root"));
+```
 
 ### props 是什麼 <a href="#props-e6-98-af-e4-bb-80-e9-ba-bc" id="props-e6-98-af-e4-bb-80-e9-ba-bc"></a>
 
