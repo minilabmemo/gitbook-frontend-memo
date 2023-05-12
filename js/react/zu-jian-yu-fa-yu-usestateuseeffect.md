@@ -13,7 +13,7 @@ description: 組件語法與基本生
 * Component 命名首字必須大寫，大寫駝峰的方式，否則 React 會把它當作一般的 HTML 元素處理，並跳出Warning提示，看到大寫駝峰命名變數時，可以知道是 React 組件而非一般函式。
 * 其他 HTML 屬性、CSS 樣式屬性或一般的函式來說，則會遵行 JavaScript 以小寫駝峰來命名變數的慣例，例如在 className、maxLength、backgroundColor 等等。
 
-#### props 是什麼 <a href="#props-e6-98-af-e4-bb-80-e9-ba-bc" id="props-e6-98-af-e4-bb-80-e9-ba-bc"></a>
+### props 是什麼 <a href="#props-e6-98-af-e4-bb-80-e9-ba-bc" id="props-e6-98-af-e4-bb-80-e9-ba-bc"></a>
 
 * component 就像是 JavaScript 的 function，它接收任意的參數（稱之為「props」）[^1]並且回傳畫面的 React element。
 * props 通常是不可變的(唯獨Immutable)，不能修改自己的
@@ -101,10 +101,8 @@ const Hello = () => {
 * [根據React 與 bind this](https://medium.com/reactmaker/react-%E8%88%87-bind-this-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BF%83%E5%BE%97-323c8d3d395d)
 * 範例練習:透過一個新的按鈕去改變時間 [Refresh Time](https://codesandbox.io/s/refreshtime-ju4pv?file=/src/index.js)
 
-{% code overflow="wrap" %}
-```jsx
-import React from "react";
-import ReactDOM from "react-dom";
+<pre class="language-jsx" data-overflow="wrap"><code class="lang-jsx"><strong>import React from "react";
+</strong>import ReactDOM from "react-dom";
 
 import App from "./App";
 
@@ -119,7 +117,6 @@ class Clock extends React.Component {
 
   // changeTime(){
   //   this.setState({date: new Date()})
-
   // }
   //根據React 與 bind this
 
@@ -130,25 +127,24 @@ class Clock extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Hello, world!</h1>
-        <h2>现在是 {this.state.date.toLocaleTimeString()}.</h2>
-        <button onClick={this.changeTime}>刷新 </button>
-      </div>
+      &#x3C;div>
+        &#x3C;h1>Hello, world!&#x3C;/h1>
+        &#x3C;h2>现在是 {this.state.date.toLocaleTimeString()}.&#x3C;/h2>
+        &#x3C;button onClick={this.changeTime}>刷新 &#x3C;/button>
+      &#x3C;/div>
     );
   }
 }
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Clock />,
-  </React.StrictMode>,
+  &#x3C;React.StrictMode>
+    &#x3C;Clock />,
+  &#x3C;/React.StrictMode>,
   rootElement
 );
 
 
-```
-{% endcode %}
+</code></pre>
 
 **2.使用function component更改state（用useState）**
 
@@ -161,35 +157,35 @@ ReactDOM.render(
 * useState它回傳了一對值：目前的 state 跟一個可以更新 state 的 function。
 * 範例改寫練習 [Refresh\_Time\_useState](https://codesandbox.io/s/refreshtimeusestate-xns3c?file=/src/index.js)
 
-```
-//1.加上useState引入
-import React, { useState } from 'react';
+<pre class="language-diff"><code class="lang-diff"><strong>+//1.加上useState引入
+</strong>+import React, { useState } from 'react';
 import ReactDOM from "react-dom";
 
 const Clock=()=>{
-  // 2.宣告一個 state 變數，命名date。
-  // 傳入 useState() 的參數就是 state 起始值
-  const [date, changeTime] = useState(new Date());
-// 3-1 return中直接寫上state變數-在 function 中可以直接使用 state
-// 3-2 當使用者點擊，我們就呼叫 函式 並傳入新的值。
++// 2.宣告一個 state 變數，命名date。 傳入 useState() 的參數就是 state 起始值
++  const [date, changeTime] = useState(new Date());
+
++// 3-1 return中直接寫上state變數-在 function 中可以直接使用 state
   return(
-      <div>
-        <h1>Hello, world!</h1>
-        <h2>现在是 {date.toLocaleTimeString()}.</h2>
-        <button onClick={()=>{changeTime(new Date())}}>刷新 </button>
-      </div>
+      &#x3C;div>
+        &#x3C;h1>Hello, world!&#x3C;/h1>
++       &#x3C;h2>现在是 {date.toLocaleTimeString()}.&#x3C;/h2>
+
+// 3-2 當使用者點擊，我們就呼叫 函式 並傳入新的值。
++        &#x3C;button onClick={()=>{changeTime(new Date())}}>刷新 &#x3C;/button>
+      &#x3C;/div>
   );
 }
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <React.StrictMode>
-    <Clock/>
-  </React.StrictMode>,
+  &#x3C;React.StrictMode>
+    &#x3C;Clock/>
+  &#x3C;/React.StrictMode>,
   rootElement
 );
 
-```
+</code></pre>
 
 ***
 
@@ -204,12 +200,12 @@ ReactDOM.render(
 
 ***
 
-#### 生命週期 <a href="#e7-94-9f-e5-91-bd-e9-80-b1-e6-9c-9f" id="e7-94-9f-e5-91-bd-e9-80-b1-e6-9c-9f"></a>
+## 生命週期 <a href="#e7-94-9f-e5-91-bd-e9-80-b1-e6-9c-9f" id="e7-94-9f-e5-91-bd-e9-80-b1-e6-9c-9f"></a>
 
 元件被安裝時(Mount)、元件被更新時(Update)、元件被移除時(Unmount)\
 \*註：原本想要一樣比較一下class 原本的用法，但還是直接介紹function component(useEffect)更簡潔．
 
-**useEffect hook**
+### **useEffect hook**
 
 ```
 useEffect(() => {
@@ -231,7 +227,7 @@ Ref:
 
 ***
 
-#### 網路參考範例: <a href="#e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b" id="e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b"></a>
+## 網路參考範例: <a href="#e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b" id="e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b"></a>
 
 [React State(状态)](https://www.runoob.com/react/react-state.html) @runoob基礎與線上範例\
 [State 和生命週期](https://zh-hant.reactjs.org/docs/state-and-lifecycle.html) @React中文React解說\
