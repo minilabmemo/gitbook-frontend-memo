@@ -7,6 +7,7 @@
   * [函式](js/han-shi.md)
   * [React](js/react/README.md)
     * [React + typescript](js/react/react-+-typescript.md)
+    * [React 語法 JSX](js/react/react-yu-fa-jsx.md)
 
 ## css
 
