@@ -92,6 +92,7 @@ ReactDOM.render(
 ### 範例: 帶入onClick 與 Event <a href="#e7-af-84-e4-be-8b-e5-b8-b6-e5-85-a5-e5-b1-ac-e6-80-a7-e5-91-bd-e5-90-8d-e8-88-87event" id="e7-af-84-e4-be-8b-e5-b8-b6-e5-85-a5-e5-b1-ac-e6-80-a7-e5-91-bd-e5-90-8d-e8-88-87event"></a>
 
 ```diff
++// 可以用event 去拿到參數
 +const getValue=(event)=>{
 +  console.log(event.target.value). //event.target.value
 }
@@ -103,6 +104,20 @@ ReactDOM.render(
  </React.StrictMode>,
     document.getElementById('root')
 );
+
+- onclick是要帶入函式 而不是結果！！！ 以下紅字為錯誤寫法
+// 不帶參數
++ const handelSubtract = () => {
+    setCount(count - 1);
+    console.log(`current Count is ${count}`);
++ };
+
++<ActionBlock onClick={handelSubtract}
+- <ActionBlock onClick={handelSubtract()} 注意不能這樣寫 會直接執行一次 陷入無限迴圈
+
+// 如果該函式有參數，不能直接撰寫要加上() => 
++ onClick={() => handelAction('Subtract')}
+- onClick={handelAction('Subtract')}
 ```
 
 * 駱駝式命名
@@ -111,6 +126,15 @@ ReactDOM.render(
   * 實測命名打錯 console 會出現報 Warning: Invalid DOM property `class`. Did you mean `className`?
 * <mark style="background-color:red;">輸入類的元件</mark> [<mark style="background-color:red;">button/input/textarea 互動事件觸發時，函式只會接收到一個event類別的參數，並不能傳遞其他參數</mark>](#user-content-fn-2)[^2]
 * 布林=true 的屬性值可以不寫
+* onclick 是要帶入函式 而不是結果
+
+{% hint style="warning" %}
+onclick是要帶入函式 而不是結果！！！
+
+[ \[Day 08 - 計數器\] 一個不夠，給我一次來十個 - JSX 中迴圈的使用](https://ithelp.ithome.com.tw/articles/10220209) 裡面有詳細圖解
+{% endhint %}
+
+
 
 ### 範例 JSX 引入Inline-style <a href="#e7-af-84-e4-be-8b-jsx-e5-bc-95-e5-85-a5inline-style" id="e7-af-84-e4-be-8b-jsx-e5-bc-95-e5-85-a5inline-style"></a>
 
