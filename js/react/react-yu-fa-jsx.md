@@ -231,8 +231,7 @@ const b = 26900 && 24900;
 
 當在 JavaScript 中要重複執行某一個內容或動作時，很直覺的會想到可以用 `for 迴圈，for 迴圈` 本身是個 statements 而非 expressions，執行的時候並不會有回傳值，因此不能直接放到 JSX 中的 `{}` 內去執行
 
-<pre class="language-diff"><code class="lang-diff">- 錯誤寫法 
- >
+<pre class="language-diff"><code class="lang-diff">- 錯誤寫法 >
 -    {
 -      for (let i = 0; i &#x3C; 10; i ++) {
         &#x3C;Counter />

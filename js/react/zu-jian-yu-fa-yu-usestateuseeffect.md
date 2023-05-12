@@ -216,6 +216,20 @@ ReactDOM.render(
 * 從[精读《Function VS Class 组件》](https://zhuanlan.zhihu.com/p/59558396)\
   中可以看的使用class component,會因為使用this問題而需要修復，要follow class結構與巢狀太過雜亂，再者，而function component沒有this,如果希望拿到稳定的 props，使用 Function Component 是更好的選擇。而
 * Function Component + Hooks 可以实现 Class Component 做不到的 capture props、capture value，而且 `React 官方也推荐 新的代码使用 Hooks 编写`。
+* **不能在條件式（conditions）、迴圈（loops）或嵌套函式（nested functions）中呼叫 Hook 方法**
+
+```diff
+錯誤使用
+- if (isValidCounter <= 10) {
+    const [count, setCount] = useState();
+-f  }
+```
+
+{% hint style="danger" %}
+之所以會有這樣的規定是因 React 組件（例如，`<Counter />`）每次在渲染或更新畫面時，都會呼叫產生這個組件的函式（`Counter()`），而**在 React Hooks 中會去記錄這些 Hooks 在函式中被呼叫的順序，以確保資料能夠被相互對應**，但若當我們將 Hooks 放到條件式或迴圈時，就會破壞了這些 Hooks 被呼叫到的順序，如此會造成錯誤。
+
+from \[Day 11 - 網速轉換器] 那個...資料可以分享給我嗎 - 將資料傳入組件
+{% endhint %}
 
 ***
 
@@ -277,7 +291,7 @@ Ref:
  }
  
  
- //------------
+ //另種寫法對照------------
  
  <Counter startingValue={3} />
  
