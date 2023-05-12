@@ -5,6 +5,7 @@
   * [document](js/document.md)
   * [作用域](js/zuo-yong-yu.md)
   * [函式](js/han-shi.md)
+  * [邏輯運算子](js/luo-ji-yun-suan-zi.md)
   * [React](js/react/README.md)
     * [React + typescript](js/react/react-+-typescript.md)
     * [React 語法 JSX](js/react/react-yu-fa-jsx.md)

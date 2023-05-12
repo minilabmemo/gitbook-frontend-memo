@@ -130,10 +130,82 @@ export default function App() {
 * 內容與css不同的是必須是小寫駱駝且去除'-'
 * 這種寫法的缺點是不行用hover等特殊效果，需利用其他模組化style寫法
 
-### 參考 <a href="#e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e6-96-87-e7-ab-a0" id="e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e6-96-87-e7-ab-a0"></a>
+## 條件渲染 <a href="#day7-e6-a2-9d-e4-bb-b6-e6-b8-b2-e6-9f-93" id="day7-e6-a2-9d-e4-bb-b6-e6-b8-b2-e6-9f-93"></a>
+
+* 這邊的寫法是根據ＪＳ邏輯運算子與ＪＳＸ寫法
+
+### 範例： CSS 隱藏方式
+
+控制 css style , 可以選擇以下兩種：
+
+* display:none （空間會消失 導致畫面排版「跳一下）
+* visibility:hidden（空間會存在）
+
+<pre class="language-diff"><code class="lang-diff">//找到要加的地方 inline style
+ &#x3C;div
++  style={{
++    visibility: count >= 10 &#x26;&#x26; 'hidden',
++  }}
+  onClick={() => {
+    setCount(count + 1);
+  }}
+/>
+
+//或者寫在className 隱藏元素 --> .vh是先定義到 css裡.  {中是ＪＳ判斷}  
+<strong> &#x3C;div
+</strong>+  className={`chevron chevron-up ${count >= 10 &#x26;&#x26; 'vh'}`}
+  onClick={() => {
+    setCount(count + 1);
+  }}
+/>
+</code></pre>
+
+### ＪＳ的邏輯運算子
+
+在 JavaScript 中，&& 或 || 這種語法稱作「[邏輯運算子](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Expressions\_and\_operators#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90)（Expressions - Logical operator）」，而因為在 <mark style="background-color:orange;">JSX 中的 {} 內只能放入表達式（expressions），而不能寫入像是 if...else... 這種陳述句（statement）</mark>
+
+* || 就是前面為假時去拿後面的那個,為真拿前面
+
+```
+const a = 0 || 'iPhone'; 
+// 因為 0 被轉型後為 false，所以 a 會是 'iPhone'
+const b = 26900 || 24900;  
+// 因為 26900 會轉型為 true，所以 b 會是 26900
+```
+
+* && 就是前面為真時去拿後面的那個,為假拿前面
+
+```
+const a = 0 && 'iPhone';   
+// 因為 0 被轉型後為 false，所以 a 會是 0
+const b = 26900 && 24900;  
+// 因為 26900 轉型為 true，所以 b 會是 24900
+```
+
+### 範例：使用JSX外層判斷將 DOM整個隱藏方式
+
+如果你需要比較嚴格的去控制使用者的行為，不想要使用者透過 CSS 就能簡單修改的話，那麼就把 DOM 整個移除；但如果這個功能被使用者手動打開也不會有太大影響的話，那就使用 CSS 樣式來控制畫面就好，如此會有比較好的效能和體驗(不會讓畫面排版有抖動的情況)。
+
+```diff
+//找到要控制的區塊
++ {count < 10 && (
+  <div
+    onClick={() => {
+      setCount(count + 1);
+    }}
+  />
++ )}d
+```
+
+
+
+
+
+## 參考 <a href="#e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e6-96-87-e7-ab-a0" id="e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e6-96-87-e7-ab-a0"></a>
 
 * [【React.js入門 - 06】 JSX](https://ithelp.ithome.com.tw/articles/10216468)
 * [React篇: JSX語法撰寫指引](https://eyesofkids.gitbooks.io/react-basic-zh-tw/content/day18\_deeper\_jsx/)
+* [\[Day 07 - 計數器\] 幫計數器設個最大最小值吧 - JSX 中條件渲染的使用](https://ithelp.ithome.com.tw/articles/10219716)
 
 [^1]: 
 
