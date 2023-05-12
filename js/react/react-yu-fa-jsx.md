@@ -223,6 +223,31 @@ const b = 26900 && 24900;
 
 
 
+### 迴圈重複渲染
+
+當在 JavaScript 中要重複執行某一個內容或動作時，很直覺的會想到可以用 `for 迴圈，for 迴圈` 本身是個 statements 而非 expressions，執行的時候並不會有回傳值，因此不能直接放到 JSX 中的 `{}` 內去執行
+
+<pre class="language-diff"><code class="lang-diff">- 錯誤寫法 
+ >
+-    {
+-      for (let i = 0; i &#x3C; 10; i ++) {
+        &#x3C;Counter />
+-      }
+-    }
+  &#x3C;/div>
+  
++ 利用array map
+// STEP 1: 建立元素數目為 14，內容為 [0, 1, ..., 13]
+const counters = Array.from({ length: 14 }, (_, index) => index);
+
+{/* STEP 2: 使用 map 產生多個 &#x3C;Counter /> */}
+<strong>+    {counters.map((item) => (
+</strong>      &#x3C;Counter />
++    ))}
+</code></pre>
+
+* `Array.from()` 詳細的用法可以參考 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/from) 的說明
+
 
 
 ## 參考 <a href="#e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e6-96-87-e7-ab-a0" id="e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e6-96-87-e7-ab-a0"></a>
