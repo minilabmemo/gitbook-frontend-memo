@@ -163,7 +163,7 @@ ReactDOM.render(
 
 </code></pre>
 
-**2.使用function component更改state（用useState）**
+### **2.使用function component更改state（用useState）**
 
 * 沒有內部狀態（State），是 Stateless Components。
 * 沒有 Lifecycle Hooks 和 refs。
@@ -171,7 +171,7 @@ ReactDOM.render(
 
 > hook意思是“鈎子”，在音樂上，指的是一首歌曲中最能鈎人的部分。Hook 是 React 16.8 增加的新功能。讓你不必寫 class 就能使用 state 以及其他 React 的功能。使用hook可以更簡化且被推崇使用。
 
-* useState它回傳了一對值：目前的 state 跟一個可以更新 state 的 function。
+* <mark style="color:red;">useState它回傳了一對值：目前的 state 跟一個可以更新 state 的 function。useState 其實是React 物件中的一個方法，用法的兩個參數其實是解構賦植的用法</mark>
 * 範例改寫練習 [Refresh\_Time\_useState](https://codesandbox.io/s/refreshtimeusestate-xns3c?file=/src/index.js)
 
 <pre class="language-diff"><code class="lang-diff"><strong>+//1.加上useState引入
