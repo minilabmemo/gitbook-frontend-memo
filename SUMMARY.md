@@ -8,6 +8,7 @@
   * [React](js/react/README.md)
     * [React + typescript](js/react/react-+-typescript.md)
     * [React 語法 JSX](js/react/react-yu-fa-jsx.md)
+    * [組件語法與useState/useEffect](js/react/zu-jian-yu-fa-yu-usestateuseeffect.md)
 
 ## css
 
