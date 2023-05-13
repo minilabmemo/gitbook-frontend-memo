@@ -4,14 +4,12 @@ description: 作用域
 
 # 作用域
 
-####
+## 作用域
 
-### 作用域
-
-#### 不太懂
+* 塊級作用域 (Block Level Scope) 是一種更小的作用域。只存在於 {} 中
 
 ```
-塊級作用域 (Block Level Scope) 是一種更小的作用域。只存在於 {} 中
+
 let func = (() => {
     let number = 999; {
         console.log(number); // 999
@@ -19,8 +17,6 @@ let func = (() => {
     console.log(number); // 999
 })()
 console.log(number); // ReferenceError: number is not defined
-
-
 
 ```
 
@@ -46,19 +42,21 @@ console.log(number); // ReferenceError: number is not defined
 * [Day02【ES6 小筆記】變數宣告 - let、const 哪裡好？跟 var 說掰掰](https://ithelp.ithome.com.tw/articles/10213188)
 * &#x20;airbnb 的規則就是 `不要使用var了` var 有一個大大的缺點，也就是在一些`區塊語句（if、else、 for、 while等）裡面用 var 宣告的變數，是會洩漏到全域中的！`
 
-{% hint style="info" %}
+{% hint style="warning" %}
 not defined 是未被宣告&#x20;
 
-undefined 則是建立後尚未賦值\
+undefined 則是建立後尚未賦值
+
+\
 initialized \
 `let/const` 中也存在變數提升的，並且會提升到`區塊作用域`的頂部，但是他還有另一個概念就是`「暫時死區」`，也就是`如果在宣告變數之前使用變數，這個變數就是存在「暫時死區」中無法存取`！這時候使用它就會報錯 `ReferenceError`。
 {% endhint %}
 
-### 提升
+## 提升
 
 變數與函數都可以先使用再宣告
 
-只有變數的宣告會提升，賦值不會提升
+### 只有變數的宣告會提升，賦值不會提升
 
 |                                                                                                                        |                                                                                                                                                                                                                                                                                        |
 | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -68,11 +66,14 @@ initialized \
 
 
 
-#### 函式表達式的提升
+### 函式表達式的提升
 
 [Day16　函式陳述句與函式表示式](https://ithelp.ithome.com.tw/articles/10192146)
 
-`Function Statement`(函式陳述句)與`Function Expression`(函式表達式、表示式)
+* `Function Statement`(函式陳述句)與`Function Expression`(函式表達式、表示式)
+* 表達是一試種有回傳值的函式
+
+
 
 看作變數提升
 
