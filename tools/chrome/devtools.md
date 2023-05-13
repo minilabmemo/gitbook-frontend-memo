@@ -10,9 +10,39 @@
 
 
 
-### Console
+### **console.log**
 
-**複製內容**
+印出對象，可以搭配字串，但要小心如果搭配字串可能看不到對象類型
+
+```diff
+const object1 = {
+  a: ["somestring",123], b: 42
+};
+
+ console.log(object1);
+ // > Object { a: Array ["somestring", 123], b: 42 }
++// 這邊可以看出是個Object
+ console.log("object1:"+ object1);
+//> "object1:[object Object]"
+
+const data = [
+  'a', ["somestring",123],  'b', 42
+];
+
+ console.log(data);
+//> Array ["a", Array ["somestring", 123], "b", 42]
++// 這邊可以看出是個Array
+ console.log("data:"+ object2);
+//> "data:a,somestring,123,b,42"
++ // 這邊僅印出array內容
+
+```
+
+
+
+###
+
+### **複製內容**
 
 一般來說可以在 console 中印出陣列，但 console 會顯示階層式的物件，如果想要複製單純內物件內容，就要透過下列動作達成：
 

@@ -5,11 +5,16 @@
   * [document](js/document.md)
   * [作用域](js/zuo-yong-yu.md)
   * [函式](js/han-shi.md)
+  * [常用](js/chang-yong/README.md)
+    * [時間與Math](js/chang-yong/shi-jian-yu-math.md)
+    * [陣列](js/chang-yong/zhen-lie.md)
   * [邏輯運算子](js/luo-ji-yun-suan-zi.md)
   * [React](js/react/README.md)
     * [React + typescript](js/react/react-+-typescript.md)
     * [React 語法 JSX](js/react/react-yu-fa-jsx.md)
     * [組件語法與useState/useEffect](js/react/zu-jian-yu-fa-yu-usestateuseeffect.md)
+    * [hook](js/react/hook.md)
+  * [Web API](js/web-api.md)
 
 ## css
 
@@ -27,6 +32,7 @@
 * [圖庫素材](tools/tu-ku-su-cai.md)
 * [chrome](tools/chrome/README.md)
   * [DevTools](tools/chrome/devtools.md)
+  * [console 操作](tools/chrome/console-cao-zuo.md)
 * [Emmet](tools/emmet.md)
 * [vscode](tools/vscode/README.md)
   * [code snippet](tools/code-snippet.md)
