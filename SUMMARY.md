@@ -8,7 +8,7 @@
   * [常用運算](js/chang-yong-yun-suan/README.md)
     * [時間與Math](js/chang-yong-yun-suan/shi-jian-yu-math.md)
     * [陣列](js/chang-yong-yun-suan/zhen-lie.md)
-    * [邏輯運算子](js/chang-yong-yun-suan/luo-ji-yun-suan-zi.md)
+    * [邏輯運算子](js/luo-ji-yun-suan-zi.md)
     * [解構賦值](js/chang-yong-yun-suan/jie-gou-fu-zhi.md)
   * [React](js/react/README.md)
     * [React + typescript](js/react/react-+-typescript.md)

@@ -84,8 +84,6 @@ $.ajax({
 
 Fetch是近年來號稱要取代XHR的新技術標準，它是一個HTML5的API，並非來自ECMAScript標準。
 
-現今瀏覽器都已自帶Fetch, 連Library都不用引入就可以使用
-
 
 
 {% hint style="info" %}
@@ -93,7 +91,8 @@ Fetch是近年來號稱要取代XHR的新技術標準，它是一個HTML5的API�
 
 * 有點像 `XMLHttpRequest` ，但這個新的 API 提供了更強更彈性的功能。
 * &#x20;`fetch` 和 `jQuery.ajax()` 有差異- [Use Fetch](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch\_API/Using\_Fetch)
-* `fetch()` 回傳的 promise **不會 reject HTTP 的 error status**，就算是 HTTP 404 或 500 也一樣。相反地，它會正常地 resolve，並把 `ok` status 設為 false。會讓它發生 reject 的只有網路錯誤或其他會中斷 request 的情況。
+* `fetch()` 回傳的 promise <mark style="color:green;">**不會 reject HTTP 的 error status**</mark><mark style="color:blue;">，</mark>就算是 HTTP 404 或 500 也一樣。相反地，它會正常地 resolve，並把 `ok` status 設為 false。<mark style="color:orange;">**會讓它發生 reject 的只有網路錯誤或其他會中斷 request 的情況。**</mark>
+* 現今瀏覽器都已自帶 Fetch, 連Library都不用引入就可以使用
 {% endhint %}
 
 * <mark style="color:red;">**Fetch API 回傳會是個 Promise 物件**</mark>&#x20;
@@ -102,7 +101,7 @@ Fetch是近年來號稱要取代XHR的新技術標準，它是一個HTML5的API�
 
 #### 等待多個回傳結果範例：
 
-* `async/await` 函式的目的在於簡化同步操作 promise 的表現(ES7的寫法，可以讓非同步call back寫法看起來像同步的順序去執行)，以及對多個 `Promise` 物件執行某些操作，可以與promise組合技使用。
+* <mark style="color:red;">`async/await`</mark> <mark style="color:red;"></mark><mark style="color:red;">函式的目的在於簡化同步操作 promise 的表現(</mark>ES7的寫法，可以讓非同步call back寫法看起來像同步的順序去執行)，以及對多個 `Promise` 物件執行某些操作，可以與promise組合技使用。
 
 {% hint style="danger" %}
 注意，await 一定得運行在 async function 內！
