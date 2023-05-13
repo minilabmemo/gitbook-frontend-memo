@@ -54,7 +54,7 @@ const element = <ChildComponent firstName="Aaron" lastName="Chen" />;
 interface FooProps {
   firstName: string;
   lastName: string
-  // children: React.ReactNode;
+  // children: React.ReactNode;  //待研究
 }
 
 
