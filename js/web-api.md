@@ -87,7 +87,7 @@ Fetch是近年來號稱要取代XHR的新技術標準，它是一個HTML5的API�
 
 
 {% hint style="info" %}
-[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch\_API) 提供了一種 JavaScript Interface 來操作 HTTP pipeline，比方 request 和 response。同時它也提供了 global 的 fetch`()` (en-US) method，使得在網路上非同步地 fetch resources 這件事變得簡單易懂。
+[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch\_API) 提供了一種 JavaScript Interface 來操作 HTTP pipeline，比方 request 和 response。同時它也提供了 global 的 fetch`()` method，使得在網路上非同步地 fetch resources 這件事變得簡單易懂。
 
 * 有點像 `XMLHttpRequest` ，但這個新的 API 提供了更強更彈性的功能。
 * &#x20;`fetch` 和 `jQuery.ajax()` 有差異- [Use Fetch](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch\_API/Using\_Fetch)
