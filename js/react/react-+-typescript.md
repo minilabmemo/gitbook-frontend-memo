@@ -41,4 +41,35 @@ chrome& firefox 上協助開發者debug的插件:React-Developer-Tools
 
 更多關於 [Profilers](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html) 的使用可以進一步參考 React 在官方網站 的說明。
 
-\
+
+
+## 開始撰寫
+
+### 範例 props type的改法
+
+```diff
+
+const element = <ChildComponent firstName="Aaron" lastName="Chen" />;
+
+interface FooProps {
+  firstName: string;
+  lastName: string
+  // children: React.ReactNode;
+}
+
+
+// 透過解構賦值把 props 內需要用到的變數取出
+- function ChildComponent(props).  // 這邊會跳出毛毛蟲
+- function ChildComponent(props: any) { 不要這樣寫
++ function ChildComponent(props: { firstName: string, lastName: string }) { 
++ function ChildComponent(props: FooProps) {
+  const { firstName, lastName } = props;
+  return <h1>Hello, {firstName} {lastName}</h1>;    // Hello, Aaron Chen
+}
+
+
+```
+
+
+
+ref : [\[掘竅\] 了解這些，更快掌握 TypeScript 在 React 中的使用（Using TypeScript in React）](https://pjchender.blogspot.com/2020/07/typescript-react-using-typescript-in.html)\
