@@ -11,10 +11,10 @@
     * [邏輯運算子](js/luo-ji-yun-suan-zi.md)
     * [解構賦值](js/chang-yong-yun-suan/jie-gou-fu-zhi.md)
   * [React](js/react/README.md)
-    * [React + typescript](js/react/react-+-typescript.md)
     * [React 語法 JSX](js/react/react-yu-fa-jsx.md)
     * [組件語法與useState/useEffect](js/react/zu-jian-yu-fa-yu-usestateuseeffect.md)
     * [hook](js/react/hook.md)
+    * [React + typescript](js/react/react-+-typescript.md)
   * [Web API](js/web-api.md)
 
 ## css
