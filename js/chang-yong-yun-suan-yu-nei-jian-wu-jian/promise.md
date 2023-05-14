@@ -21,7 +21,7 @@ const myFirstPromise = new Promise((resolve, reject) => {
 * \*通常 executor 函式會發起一些非同步操作
 * 成功完成後執行 `resolve` 以完成 promise；或如果有錯誤，執行 `rejects`。 如果 executor 函式在執行中拋出錯誤，promise 會被拒絕（rejected），回傳值也將被忽略。
 
-### 範例
+### 基本範例
 
 ```javascript
 let myFirstPromise = new Promise((resolve, reject) => {
@@ -50,20 +50,49 @@ myFirstPromise
 
 * 第二個then為接收上一個then的return, 注意如果第一個忘了retrun 這邊接收到的東西就是undefined,不會有任何錯誤。
 * 由於 `Promise.prototype.then()` 以及 `Promise.prototype.catch()` 方法都回傳 promise，它們可以被串接。
+* 但如果我們在 `.then` 中是 return 另一個 `new Promise` ，則下一個 `.then` 會等到這個 Promise 中的 resolve 得到值後才執行。且在下一個 `.then` 的 `resolvedCallback` 中，可以得到上一個 `new Promise` 中 `resolve` 的值
 
 {% hint style="warning" %}
 但是我們在某個階段裏面發生錯誤時，該階段下一個是 `then` 的話就不會執行，會直接跳到 `catch`。
 
-其實 `catch` 執行完畢後，還是可以繼續使用 `then` 串接，但在實務上我們很少會這麼做（我的測試是發現無論成功失敗這個cathc後面的then都會執行, 跟想像不一樣,還是少用好！）
+其實 `catch` 執行完畢後，還是可以繼續使用 `then` 串接，但在實務上我們很少會這麼做
 
-```javascript
+* （我的測試是發現無論成功失敗這個cathc後面的then都會執行, 跟想像不一樣,還是少用好！） 除非有特殊需要，不然 .catch() 通常會放在最後
+
+```
 .then((res) => { return 某個錯誤promise行為 ) 
 .then((res) => {console.log(res)}) // 不執行
 .catch((err) => {return err+ '準備'})//跳到這邊
 ```
 {% endhint %}
 
+### 範例: 帶入參數回傳Promise
 
+```
+// 等待一秒執行一次的範例
+function waitASecond(second) {
+  console.log("waitASecond:"+second);
+  return new Promise((resolve, reject) => {
+    setTimeout(function () {
+      second++;
+      resolve(second);
+    }, 1000);
+  });
+}
+
+waitASecond(0)
+  .then(waitASecond)  //回傳 new Promise
+  .then(waitASecond) //回傳 new Promise
+  .then((second) => {
+    console.log(second);
+  });
+  
+// 結果 以下都等待一秒才出現
+waitASecond:0
+waitASecond:1
+waitASecond:2
+3
+```
 
 ### 參考
 
