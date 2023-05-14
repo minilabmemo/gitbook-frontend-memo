@@ -9,7 +9,7 @@
   * [常用運算與內建物件](js/chang-yong-yun-suan-yu-nei-jian-wu-jian/README.md)
     * [時間與Math](js/chang-yong-yun-suan-yu-nei-jian-wu-jian/shi-jian-yu-math.md)
     * [陣列](js/chang-yong-yun-suan-yu-nei-jian-wu-jian/zhen-lie.md)
-    * [邏輯運算子](js/chang-yong-yun-suan-yu-nei-jian-wu-jian/luo-ji-yun-suan-zi.md)
+    * [邏輯運算子](js/luo-ji-yun-suan-zi.md)
     * [解構賦值](js/chang-yong-yun-suan-yu-nei-jian-wu-jian/jie-gou-fu-zhi.md)
     * [Promise](js/chang-yong-yun-suan-yu-nei-jian-wu-jian/promise.md)
   * [React](js/react/README.md)
