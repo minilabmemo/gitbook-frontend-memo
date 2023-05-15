@@ -94,6 +94,71 @@ waitASecond:2
 3
 ```
 
+### Promise.all
+
+```
+Promise.all(iterable);
+```
+
+* 一個 iterable 物件像是 `Array` 或 `String`。回傳一個以 iterable 其內**所有**值（包含非 promise 值）
+* `當任一個陣列成員被拒絕則` `Promise.all` 被拒絕。例如，若傳入四個將在一段時間後被解決的 promises，而其中一個立刻被拒絕，則 `Promise.all` 將立刻被拒絕。
+
+```diff
+var p1 = Promise.resolve(3);
+var p2 = 1337;
+var p3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'foo');
+});
+
+Promise.all([p1, p2, p3]).then(values => {
+  console.log(values); // [3, 1337, "foo"]. //會等待所有都回傳為止
+});
+
+- 需注意假設有一個沒有回 會一直等待下去.... 沒有timeout?
+
+```
+
+#### 其中一個拒絕範例
+
+```
+var p1 = new Promise((resolve, reject) => {
+  setTimeout(()=>{ resolve("one");console.log("p1");}, 1000);
+});
+var p2 = new Promise((resolve, reject) => {
+  setTimeout(()=>{ console.log("p2");resolve("two")}, 2000);
+});
+var p3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 3000, 'three');  //等同於resolve('three')
+});
+var p4 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 4000, 'four');
+});
+var p5 = new Promise((resolve, reject) => {
+  reject('reject');
+});
+
+
+// 正常狀況
+// Promise.all([p1, p2, p3, p4]).then(values => {
+//   console.log("[Promise.all 1~4]:"+values); //[Promise.all 1~4]:one,two,three,four
+// }, reason => {
+//   console.log(reason)
+// });
+
+//一個拒絕
+Promise.all([p1, p2, p3, p4, p5]).then(values => {
+  console.log("[Promise.all 1~5]"+values);
+}, reason => {
+  console.log(reason)
+});
+
+
+// 回傳結果
+reject // 等到有一個拒絕就馬上先回拒絕
+p1  //但其他的等待一秒還是會執行
+p2
+```
+
 ### 參考
 
 * MDN JavaScript 參考文件=>標準內建物件=>[Promise](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global\_Objects/Promise)
