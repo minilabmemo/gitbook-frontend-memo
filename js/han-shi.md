@@ -70,10 +70,11 @@ ref: [JavaScript 表達式觀念及運用 - JS Expression](https://www.casper.tw
 {% hint style="info" %}
 [Callback 回調· 從ES6開始的JavaScript學習生活](https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part4/callback.html)
 
-複雜的情況是在於CPS風格使用callback(回調)來移往下一個函式執行，當你開始撰寫一個接著一個執行的流程，也就是一個特定工作的函式呼叫後要接下一個特定工作的函式時，就會看到所謂的"回調地獄"的結構
+複雜的情況是在於CPS風格使用callback(回調)來移往下一個函式執行，當你開始撰寫一個接著一個執行的流程，也就是一個特定工作的函式呼叫後要接下一個特定工作的函式時，就會看到所謂的"<mark style="color:red;">回調地獄</mark>"的結構 「<mark style="color:red;">`callback`</mark> <mark style="color:red;"></mark><mark style="color:red;">一多，縮排就會很醜</mark>」
 
-<pre><code>step1(x, function(value1){
-  //do something...
+<pre><code><strong>
+</strong><strong>step1(x, function(value1){
+</strong>  //do something...
   step2(y, function(value2){
     //do something...
     step3(z, function(value3){
@@ -85,6 +86,6 @@ ref: [JavaScript 表達式觀念及運用 - JS Expression](https://www.casper.tw
 </strong>因為有些I/O或事件類的函式，用直接風格會造成阻塞，所以要寫成異步的回調函式，也就是一定要用CPS
 </code></pre>
 
-現在已經有很多協助處理的方式，回調地獄可以用例如Promise、generator、async/await之類的語法結構，或是Async、co外部函式庫等，來改善或重構原本的程式碼結構，在往後維護程式碼上會比較容易，這些才是你現在應該就要學習的方式。
+現在已經有很多協助處理的方式，回調地獄可以用例如Promise、generator（少用了？）、async/await之類的語法結構，或是Async、co外部函式庫等，來改善或重構原本的程式碼結構，在往後維護程式碼上會比較容易，這些才是你現在應該就要學習的方式。
 {% endhint %}
 

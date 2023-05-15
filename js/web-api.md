@@ -104,7 +104,9 @@ Fetch是近年來號稱要取代XHR的新技術標準，它是一個HTML5的API�
 * <mark style="color:red;">`async/await`</mark> <mark style="color:red;"></mark><mark style="color:red;">函式的目的在於簡化同步操作 promise 的表現(</mark>ES7的寫法，可以讓非同步call back寫法看起來像同步的順序去執行)，以及對多個 `Promise` 物件執行某些操作，可以與promise組合技使用。
 
 {% hint style="info" %}
-Promise 是用來優化非同步的語法，而 Async、Await 可以**基於 Promise** 讓非同步的語法的結構類似於 “同步語言”，更易讀且好管理。
+<mark style="background-color:yellow;">**Promise 是用來優化非同步的語法，解決callback hall**</mark>
+
+<mark style="background-color:yellow;">**而 Async、Await 可以基於 Promise 讓非同步的語法的結構類似於 “同步語言”，更易讀且好管理。**</mark>
 {% endhint %}
 
 {% hint style="danger" %}
