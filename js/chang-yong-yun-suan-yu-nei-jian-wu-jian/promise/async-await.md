@@ -70,3 +70,9 @@ demo();
 ```
 
 * 註： async的最後如果有return也是可以用demo.than接值, 另外也可以用catch 接錯誤 (跟原概念一樣）
+
+{% hint style="danger" %}
+注意，await 一定得運行在 async function 內！await 的錯誤會讓 async 拋出錯誤，而不會造成終止。
+{% endhint %}
+
+&#x20;    &#x20;
