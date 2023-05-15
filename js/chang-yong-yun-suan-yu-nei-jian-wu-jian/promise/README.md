@@ -69,6 +69,11 @@ myFirstPromise
 
 ### 範例: 帶入參數回傳Promise
 
+
+
+* 在then中回傳 new Promise 來達成一個執行完後再一個的行為  \[來解callbakhall]
+* 下列程式碼可以在更加優化去寫成async await寫法
+
 ```
 // 等待一秒執行一次的範例
 function waitASecond(second) {
@@ -82,8 +87,8 @@ function waitASecond(second) {
 }
 
 waitASecond(0)
-  .then(waitASecond)  //回傳 new Promise
-  .then(waitASecond) //回傳 new Promise
+  .then(waitASecond)  //回傳 new Promise。這邊是非同步片段  
+  .then(waitASecond) //回傳 new Promise // .then( ()=>{return waitASecond(1)})
   .then((second) => {
     console.log(second);
   });
