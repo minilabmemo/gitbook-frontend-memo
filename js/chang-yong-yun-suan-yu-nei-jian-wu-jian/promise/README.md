@@ -97,8 +97,10 @@ waitASecond:2
 
 ### Promise.all
 
+此方法在聚集（aggregating）多個 promises 的結果時很有幫助。
+
 ```
-Promise.all(iterable);
+Promise.all(iterable);   //這裡面的東西都是一起同時非同步開始執行
 ```
 
 * 一個 iterable 物件像是 `Array` 或 `String`。回傳一個以 iterable 其內**所有**值（包含非 promise 值）

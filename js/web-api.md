@@ -110,7 +110,7 @@ Fetch是近年來號稱要取代XHR的新技術標準，它是一個HTML5的API�
 {% endhint %}
 
 {% hint style="danger" %}
-注意，await 一定得運行在 async function 內！
+注意，await 一定得運行在 async function 內！await 的錯誤會讓 async 拋出錯誤，而不會造成終止。
 {% endhint %}
 
 * Promise.all()，其背後操作則是使用陣列將多個 promise 函式打包，當全部執行完成後回傳陣列結果。 但是一旦有 Promise 物件失敗，將回傳失敗那個物件回傳的結果
