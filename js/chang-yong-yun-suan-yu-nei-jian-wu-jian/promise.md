@@ -194,3 +194,4 @@ p2 //其他一樣會跑
 
 * MDN JavaScript 參考文件=>標準內建物件=>[Promise](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global\_Objects/Promise)
 * [你今天 Promise 了嗎？](https://5xruby.tw/posts/promise)
+* [JavaScript Promise 全介紹 - 卡斯伯Blog](https://www.casper.tw/development/2020/02/16/all-new-promise/)
