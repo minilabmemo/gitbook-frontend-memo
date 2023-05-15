@@ -4,7 +4,11 @@
 
 async 函式內部可以使用 [`await`](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/await) 表達式，它會暫停此 async 函式的執行，並且等待傳遞至表達式的 Promise 的解析，解析完之後會回傳解析值，並繼續此 async 函式的執行。
 
-
+```
+async function getData () {
+  let resolveValue = await <Promise>
+}
+```
 
 {% hint style="info" %}
 [Async function / Await 深度介紹| 卡斯伯Blog - 前端](https://www.casper.tw/development/2020/10/16/async-await/)
