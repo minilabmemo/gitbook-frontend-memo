@@ -2,7 +2,7 @@
 
 ## **`語法`**
 
-**`Promise`** 物件代表一個即將完成、或失敗的非同步操作，以及它所產生的值。是用來優化非同步的語法
+[**`Promise`**](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global\_Objects/Promise) 物件代表一個即將完成、或失敗的非同步操作，以及它所產生的值。是用來優化非同步的語法
 
 <pre class="language-diff"><code class="lang-diff"><strong>+// 語法
 </strong><strong>new Promise( /* executor */ function(resolve, reject) { ... } );
@@ -20,6 +20,7 @@ const myFirstPromise = new Promise((resolve, reject) => {
 * 為一個依序接收兩個參數的函式：`resolve` 及 `reject`（實現及拒絕回呼函式）
 * \*通常 executor 函式會發起一些非同步操作
 * 成功完成後執行 `resolve` 以完成 promise；或如果有錯誤，執行 `rejects`。 如果 executor 函式在執行中拋出錯誤，promise 會被拒絕（rejected），回傳值也將被忽略。
+* then((successMessage) <mark style="color:red;">僅作為成功訊息，但是它不一定是字串</mark>。
 
 ### 基本範例
 
@@ -120,6 +121,8 @@ Promise.all([p1, p2, p3]).then(values => {
 
 #### 其中一個拒絕範例
 
+* 其中一個立刻被拒絕，則 `Promise.all` 將立刻被拒絕。  「就算全部都被拒絕，也是回一個」
+
 ```
 var p1 = new Promise((resolve, reject) => {
   setTimeout(()=>{ resolve("one");console.log("p1");}, 1000);
@@ -157,6 +160,34 @@ Promise.all([p1, p2, p3, p4, p5]).then(values => {
 reject // 等到有一個拒絕就馬上先回拒絕
 p1  //但其他的等待一秒還是會執行
 p2
+```
+
+### Promise.race
+
+當傳入的 iterable 中有 promise 被實現或拒絕時，立刻回傳被實現或拒絕的 `Promise`。
+
+```
+var p1 = new Promise((resolve, reject) => {
+  setTimeout(()=>{ resolve("one");console.log("one");}, 1000);
+});
+var p2 = new Promise((resolve, reject) => {
+  setTimeout(()=>{ console.log("p2");resolve("two")}, 2000);
+});
+var p3 = new Promise((resolve, reject) => {
+   setTimeout(reject, 4000, 'reject');
+});
+
+
+Promise.race([p1, p2, p3]).then(values => {
+  console.log("values:"+values);
+}, reason => {
+  console.log(reason)
+});
+
+// 回傳結果
+one 有一個完成 
+values:one //回傳一個
+p2 //其他一樣會跑
 ```
 
 ### 參考

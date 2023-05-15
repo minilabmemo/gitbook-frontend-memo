@@ -52,3 +52,39 @@ ref: [JavaScript 表達式觀念及運用 - JS Expression](https://www.casper.tw
     console.log("ES6:" + Add4(1, 2))//3
     console.log("ES6:" + Add5(1, 2))//3
 ```
+
+## CPS風格與回調(Callback)
+
+* CPS用的是明確地移轉控制權到下一個函式中，也就是使用"延續函式"的方式，一般稱它為"回調函式"或"回調(Callback)"。回調是一個可以作為傳入參數的函式，用於在目前的函式呼叫執行最後移交控制權，而不使用函式回傳值的方式。
+*
+
+    ```js
+    //CPS風格
+    function func(x, cb) {
+      cb(x) //將本來應該要回傳的值(不限定只有一個)，傳給下一個延續函式，繼續下個函式的執行:
+    }
+    ```
+* 相較直接風格的程式碼是最常被使用與教學，因為它容易被學習與理解
+* JavaScript中會大量使用CPS風格來設計事件異步處理的模型，用於配合異步回調函式的執行使用。
+
+{% hint style="info" %}
+[Callback 回調· 從ES6開始的JavaScript學習生活](https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part4/callback.html)
+
+複雜的情況是在於CPS風格使用callback(回調)來移往下一個函式執行，當你開始撰寫一個接著一個執行的流程，也就是一個特定工作的函式呼叫後要接下一個特定工作的函式時，就會看到所謂的"回調地獄"的結構
+
+<pre><code>step1(x, function(value1){
+  //do something...
+  step2(y, function(value2){
+    //do something...
+    step3(z, function(value3){
+        //do something...
+    })
+  })
+})
+<strong>那為何為不使用直接風格？而一定要用這麼不易理解的程式流程結構。上面已經有講為什麼JavaScript中會大量的使用CPS的原因:
+</strong>因為有些I/O或事件類的函式，用直接風格會造成阻塞，所以要寫成異步的回調函式，也就是一定要用CPS
+</code></pre>
+
+現在已經有很多協助處理的方式，回調地獄可以用例如Promise、generator、async/await之類的語法結構，或是Async、co外部函式庫等，來改善或重構原本的程式碼結構，在往後維護程式碼上會比較容易，這些才是你現在應該就要學習的方式。
+{% endhint %}
+
