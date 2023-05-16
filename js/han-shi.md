@@ -4,7 +4,7 @@
 
 * 陳述式：會執行一些程式碼，可能是幾個單詞或是一個片段（但不會是單一個字母），但最大的特徵是**不會回傳結果**。
   * 宣告（var、function）流程控制（block、if…else）迴圈（for、for…in）等等
-* 表達式：最大的特徵在於**會回傳結果**。
+* [<mark style="color:red;">表達式：最大的特徵在於</mark><mark style="color:red;">**會回傳結果**</mark>](#user-content-fn-1)[^1]。
 
 ref: [JavaScript 表達式觀念及運用 - JS Expression](https://www.casper.tw/development/2020/09/17/js-expression/)
 
@@ -89,3 +89,6 @@ ref: [JavaScript 表達式觀念及運用 - JS Expression](https://www.casper.tw
 現在已經有很多協助處理的方式，回調地獄可以用例如Promise、generator（少用了？）、async/await之類的語法結構，或是Async、co外部函式庫等，來改善或重構原本的程式碼結構，在往後維護程式碼上會比較容易，這些才是你現在應該就要學習的方式。
 {% endhint %}
 
+
+
+[^1]: 
