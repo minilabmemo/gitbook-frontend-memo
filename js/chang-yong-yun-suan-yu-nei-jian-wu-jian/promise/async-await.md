@@ -36,7 +36,22 @@ getData();
 結果與使用 `then` 是一致的，但就結構上更加平整，在 這個函式中都是以 “**同步**“ 的方式運行，不會產生同步、非同步程式碼混合的狀況。
 {% endhint %}
 
-範例比較
+* 在 async 和 await 中的錯誤處理是使用 `try...catch...`：
+
+```
+async function foo() {
+  try {
+    const value = await somePromise();
+    return value;
+  } catch (err) {
+    console.log('Oops, there was an error :(');
+  }
+}
+```
+
+### 範例比較
+
+用then 寫法與async/await 寫法
 
 ```
 function waitASecond(task,second) {
@@ -76,7 +91,13 @@ demo();
 * 註： async的最後如果有return也是可以用demo.than接值, 另外也可以用catch 接錯誤 (跟原概念一樣）
 
 {% hint style="danger" %}
-注意，await 一定得運行在 async function 內！await 的錯誤會讓 async 拋出錯誤，而不會造成終止。
+注意
+
+await 一定得運行在 async function 內！await 的錯誤會讓 async 拋出錯誤，而不會造成終止。
+
+
+
+如果想要在迴圈中使用 `await`，則可以使用一般的 `for` 迴圈、[for await...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of)，或 `map` 搭配 `Promise` 的寫法，**千萬不要使用 `forEach`**。
 {% endhint %}
 
 &#x20;    &#x20;
