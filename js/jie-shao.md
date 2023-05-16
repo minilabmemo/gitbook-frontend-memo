@@ -27,7 +27,7 @@ JavaScript 是個特殊的語言，嚴格說起來它是 Prototype-based[^2] 的
 不同的 runtime 會提供不同的東西，你要很清楚現在是在哪個 runtime
 
 * JavaScript 需要有地方執行，而這個地方就叫做執行環境（runtime），舉個例子，大家最常用的 runtime 就是「瀏覽器」。做的功能自然而然就會受到瀏覽器限制 （資安CORS等等）
-* 除了瀏覽器以外，JavaScript 還有另一個 runtime 叫做 [Node.js](https://nodejs.org/en/)，JavaScript 程式碼可以脫離瀏覽器執行
+* 除了瀏覽器以外，JavaScript 還有另一個 runtime 叫做 Node.js，JavaScript 程式碼可以脫離瀏覽器執行
 
 {% hint style="info" %}
 [從「為什麼不能用這個函式」談執行環境（runtime）](https://blog.huli.tw/2022/02/09/javascript-runtime/)

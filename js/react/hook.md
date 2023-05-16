@@ -13,11 +13,11 @@
 * Hook 的規則 [https://zh-hant.reactjs.org/docs/hooks-rules.html](https://zh-hant.reactjs.org/docs/hooks-rules.html)
 * ESLint plugin 叫做 `eslint-plugin-react-hooks` 來強制施行這兩個規則(Create React App 預設包含此 plugin)
 
-### `useState`
+## `useState`
 
 
 
-#### **基本用法**
+### **基本用法**
 
 * **class(setState) vs function(useState)**
 
@@ -42,7 +42,19 @@ functidon Example() {
 }
 ```
 
-#### prevState用法
+### log的地方
+
+你可以把log放在組件的地方，而不是函式中，來觀察渲染的變化，單看畫面是看不出來！！
+
+```diff
+return (
+    <Container>
++     {console.log('render isLoading', weatherElement.isLoading)}
+```
+
+
+
+### prevState用法
 
 * **多次呼叫setState方法時，可能會因為前一個狀態未被更新而出現狀態不一的狀況**，這時可以於setState內放入函式更新來獲取prevState，用法如下
 
@@ -62,11 +74,9 @@ setState(prevState => {
 > * 在迴圈內使用setState引發錯誤：[React 中的 `setState` 和 `prevState`](https://www.delftstack.com/zh-tw/howto/react/react-setstate-prevstate/#react-%E4%B8%AD%E7%9A%84-setstate-%E5%92%8C-prevstate)
 > * 多次使用frech API去setState引發錯誤
 
-### ------------------------
 
 
-
-### useEffect
+## useEffect
 
 可以把 `useEffect` 視為 `componentDidMount`，`componentDidUpdate` 和 `componentWillUnmount` 的組合。
 
@@ -129,7 +139,7 @@ function Example() {
 
 應該要修正這個問題的根源。例如，放入函式可能造成這個問題，將它們放到 effects 裡，或抽出他們到上層，或是將他們包在 `useCallback` 裡都可能會有幫助。為了避免重複產生新的物件，`useMemo` 也可以達成類似的目的。
 
-### `useCallback` <a href="#usecallback" id="usecallback"></a>
+## `useCallback` <a href="#usecallback" id="usecallback"></a>
 
 * 用法與useEffect參數傳遞很像，但會回傳一個memoized 的Callback
 * 可以記憶住該 function 的記憶體位置，避免每一次子元件 re-render 時都因為 function 的記憶體位置改變導致子元件重新渲染。
@@ -158,7 +168,7 @@ useEffect(() => {
 - 所以可以放函式 但是如果放函示會因為比對不符而陷入無限迴圈,要讓比對相符要用useCallback
 ```
 
-### `useMemo` <a href="#usememo" id="usememo"></a>
+## `useMemo` <a href="#usememo" id="usememo"></a>
 
 * 傳遞一個「建立」function 及依賴 array。`useMemo` 只會在依賴改變時才重新計算 memoized 的值。這個最佳化可以避免在每次 render 都進行**昂貴的計算**。
 
