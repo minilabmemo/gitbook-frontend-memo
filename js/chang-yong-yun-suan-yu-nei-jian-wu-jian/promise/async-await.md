@@ -53,7 +53,7 @@ async function foo() {
 
 用then 寫法與async/await 寫法
 
-```
+```javascript
 function waitASecond(task,second) {
   console.log("waitASecond:"+task);
   return new Promise((resolve, reject) => {
@@ -63,6 +63,7 @@ function waitASecond(task,second) {
   });
 }
 
+// then的寫法
 // waitASecond("task1",1000)
 //  .then( ()=>{return waitASecond("task2",1000)})  //回傳 new Promise。這邊是非同步片段
 //  .then( ()=>{return waitASecond("task3",1000)}) //回傳 new Promise 
