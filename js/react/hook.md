@@ -166,6 +166,7 @@ useEffect(() => {
 +  }, [memoizedCallback]);  //放入函示，該函式需注意要用useCallback
 - 原本可以放空 但因為包成函示他會不知道,而跳出錯誤提示在console 可執行
 - 所以可以放函式 但是如果放函示會因為比對不符而陷入無限迴圈,要讓比對相符要用useCallback
+- 最後一句很重要 決定什麼時候要再呼叫一次
 ```
 
 ## `useMemo` <a href="#usememo" id="usememo"></a>
