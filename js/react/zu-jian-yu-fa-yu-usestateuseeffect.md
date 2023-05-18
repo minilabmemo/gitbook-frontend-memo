@@ -344,6 +344,25 @@ const WeatherApp = () => {
 };
 ```
 
+### 範例：分檔案拆分：儲存變數
+
+```javascript
+// ./src/utils.js
+export const availableLocations = [
+  // ...
+];
+
+export const findLocation = (cityName) => {
+  return availableLocations.find(location => location.cityName === cityName);
+};
+
+
+// 匯入 availableLocations
+import { availableLocations } from './utils';
+import { findLocation } from './utils';
+
+```
+
 ### 範例：自己造cusomer hook
 
 * 把要給其他 React 組件使用的資料或方法回傳出去
@@ -374,6 +393,8 @@ const WeatherApp = () => {
 +  const [weatherElement, fetchData] = useWeatherApi();
 
 ```
+
+
 
 ## 網路參考範例: <a href="#e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b" id="e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b"></a>
 
