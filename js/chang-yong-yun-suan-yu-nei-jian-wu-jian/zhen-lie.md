@@ -51,9 +51,31 @@ e
 
 
 
+### map
+
+**`map()`** 方法會建立一個[<mark style="color:red;">新的陣列</mark>](#user-content-fn-1)[^1]，其內容為原陣列的每一個元素經由回呼函式運算後所回傳的結果之集合。
+
+```
+const array1 = [ {
+    name: 'andy',
+    age: 10
+  },
+  {
+    name: 'amy',
+    age: 23
+  },
+  {
+    name: 'lisa',
+    age: 30
+  }];
+
+const map1 = array1.map((location) => location.name);
+console.log(map1);//[ 'andy', 'amy', 'lisa' ]
+```
+
 ### filer
 
-* **`filter()`** 方法會建立一個經指定之函式運算後，由原陣列中通過該函式檢驗之元素所構成的<mark style="background-color:green;">**新陣列**</mark>。
+* **`filter()`** 方法會建立一個經指定之函式運算後，由原陣列中通過該函式檢驗之元素所構成的<mark style="color:red;">新陣列</mark>。
 * var newArray = arr.filter(callback(element\[, index\[, array]])\[, thisArg])
 
 ```diff
@@ -90,3 +112,5 @@ arr.reduce(callback[accumulator, currentValue, currentIndex, array], initialValu
 #### 範例
 
 #### [計算相同元素數量並以物件鍵值顯示](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global\_Objects/Array/Reduce#%E8%A8%88%E7%AE%97%E7%9B%B8%E5%90%8C%E5%85%83%E7%B4%A0%E6%95%B8%E9%87%8F%E4%B8%A6%E4%BB%A5%E7%89%A9%E4%BB%B6%E9%8D%B5%E5%80%BC%E9%A1%AF%E7%A4%BA) 這個範例就很像是把array變成累積map去做計算便回傳拿到結果 <a href="#ji-suan-xiang-tong-yuan-su-shu-liang-bing-yi-wu-jian-jian-zhi-xian-shi" id="ji-suan-xiang-tong-yuan-su-shu-liang-bing-yi-wu-jian-jian-zhi-xian-shi"></a>
+
+[^1]: 
