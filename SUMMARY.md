@@ -19,6 +19,8 @@
     * [組件語法與useState/useEffect](js/react/zu-jian-yu-fa-yu-usestateuseeffect.md)
     * [hook](js/react/hook.md)
     * [React + typescript](js/react/react-+-typescript.md)
+    * [Developer-Tools](js/react/developer-tools.md)
+    * [eslint](js/react/eslint.md)
 
 ## css
 
@@ -26,6 +28,7 @@
 * [視差滾動/滑鼠滾動](case/shi-cha-gun-dong-hua-shu-gun-dong.md)
 * [上下位移](case/shang-xia-wei-yi.md)
 * [行內與塊級](css/hang-nei-yu-kuai-ji.md)
+* [html](css/html.md)
 
 ## tools
 

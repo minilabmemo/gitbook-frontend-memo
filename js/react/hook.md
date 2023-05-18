@@ -181,6 +181,79 @@ const memoizedValue = useMemo(
 * 不要濫用，需用在複雜的計算，例如可能要 map 一組很大的陣列，這時候可能就值得運算結果暫記起來下次用。
 * <mark style="background-color:yellow;">My Note</mark>: 透過log可以得知有沒有重複計算或是profile可以得知計算速度的減少狀況
 
+## useRef
+
+> [\[Day 27 - 即時天氣\] React 中的表單處理（Controlled vs Uncontrolled）以及 useRef 的使用](https://ithelp.ithome.com.tw/articles/10227866)
+>
+> 在 React 中表單元素的處理主要可以分成兩種 Controlled 和 Uncontrolled 這兩種 像是  這類的表單元素本身就可以保有自己的資料狀態，可以直接透過 JavaScript 再取出該元素的值document.querySelector，因為使用者輸入的內容可以直接保存在  元素內。
+>
+> > 針對表單元素， React 會建議我們使用 Controlled Components，基本上使用 Controlled Components 和 Uncontrolled Components 都能達到一樣或類似的效果
+>
+>
+
+* Uncontrolled Components - useRef 的使用&#x20;
+
+但要特別留意的是：「當 input 欄位內的資料有變動時，並不像 Controlled Component 一樣會促發畫面重新渲染」，因此，若有重新渲染畫面的需求，建議還是使用 Controlled Component 來處理
+
+```diff
+const refContainer = useRef(initialValue);
+ <input ref={refContainer} />
+```
+
+#### 範例 useRef指到某個html中：
+
+```diff
+ //改寫後
++import React, {useRef} from 'react';
++const inputLocationRef = useRef(null);
+const handleSave = () => {
+    // STEP 4：
+    // 透過 inputLocationRef.current 可以指稱到該 input 元素
+    // 透過 inputLocationRef.current.value 即可取得該 input 元素的值
++    const locationName = inputLocationRef.current.value;
+    console.log(locationName);
+    
+    ...
+    
+ <StyledInputList
+        list="location-list" id="location" name="location"
+        //  onChange={handleChange}
++        ref={inputLocationRef}
+        defaultValue="臺南市"
+      />
+
+```
+
+* 當我們把 useRef 回傳的物件透過 rel 的方式放到 HTML 元素中時，就很像是用 document.querySelector 去選到該元素後，保存在 useRef 回傳物件的 current 屬性內。
+
+\----
+
+{% hint style="info" %}
+useRef 除了可以搭配 ref 指稱到某一 HTML 元素來使用之外，當我們在 React 組件中想要定義一些「變數」，但當這些變數改變時，又不需要像 state 一樣會重新導致畫面渲染的話，就很適合使用 useRef。
+{% endhint %}
+
+#### 範例：useRef 定義變數
+
+有些時候想要看某個組件被重新渲染了幾次，就可以類似這樣寫
+
+```diff
+import React, { useRef } from 'react';
+const RefExample = () => {
+//透過 useRef 便可以在 Functional Component 中定義不會導致畫面重新渲染的變數。
++  const renderCount = useRef(0);
+
+  return (
+    <div>
++      {renderCount.current += 1}
++      {console.log('render', renderCount.current)}
+      <h1> Hello, React </h1>
+    </div>
+  )
+}
+```
+
+
+
 #### reference
 
 * [什麼時候該使用 useMemo 跟 useCallback](https://medium.com/ichef/%E4%BB%80%E9%BA%BC%E6%99%82%E5%80%99%E8%A9%B2%E4%BD%BF%E7%94%A8-usememo-%E8%B7%9F-usecallback-a3c1cd0eb520)

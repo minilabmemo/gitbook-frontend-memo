@@ -152,6 +152,7 @@ export default function App() {
   );
 }
 
+
 ```
 
 * 在style內的是ＪＳ物件也可以把他們只給一個const變數

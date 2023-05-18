@@ -33,13 +33,7 @@ TypeScript 編寫的檔案都以 `.ts` 為字尾，如果是用 TypeScript 編�
 
 
 
-## 協助開發者debug的插件
-
-chrome& firefox 上協助開發者debug的插件:React-Developer-Tools
-
-打開瀏覽器的開發者工具後，會看到多了兩個名為 `Components` 和 `Profiler` 的頁籤
-
-更多關於 [Profilers](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html) 的使用可以進一步參考 React 在官方網站 的說明。
+##
 
 
 

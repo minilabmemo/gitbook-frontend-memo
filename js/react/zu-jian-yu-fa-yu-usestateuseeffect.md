@@ -264,37 +264,42 @@ Ref:
 
 設計思考：拆分成獨立的元件外，現在，我們要根據使用者輸入的值不同來呈現不同的畫面
 
+> 備註 做拆分後有出現devTools讀不到檔案出現異常 這時重開就可以了
+
+### 範例：同檔案拆分
+
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-### 範例：props的傳遞 與解構賦值
+#### 範例：props的傳遞 與解構賦值
+
+* \`使用 \<div>  {element}\</div>\`
+* props 傳遞以下所見
 
 ```diff
- 
- // 使用 <div>  {element}</div>
-
 定義 const element = <ChildComponent firstName="Aaron" lastName="Chen" />;
 
-- function ChildComponent(props) {
+// funtion定義 
+- function ChildComponent(props) { //直接用props.
 -   return <h1>Hello, {props.firstName} {props.lastName}</h1>;    // Hello, Aaron Chen
 - }
 
- // 透過解構賦值把 props 內需要用到的變數取出
+ 
  function ChildComponent(props) {
-+   const { firstName, lastName } = props;
++   const { firstName, lastName } = props; // 透過解構賦值把 props 內需要用到的變數取出
 +   return <h1>Hello, {firstName} {lastName}</h1>;    // Hello, Aaron Chen
  }
 
  //更精簡到連 props 都不命名了: 透過解構賦值直接在「函式參數的地方」把需要用到的變數取出
-
 + function ChildComponent({ firstName, lastName }) {
 +   return <h1>Hello, {firstName} {lastName}</h1>;    // Hello, Aaron Chen
  }
  
  
- //另種寫法對照------------
+ //寫法對照------------
  
  <Counter startingValue={3} />
  
+ //箭頭定義
  const Counter = (props) => {
   // STEP 3: 使用解構賦值把 startingValue 從 props 中取出
   const { startingValue } = props;
@@ -311,7 +316,64 @@ Ref:
 [\[Day 11 - 網速轉換器\] 那個...資料可以分享給我嗎 - 將資料傳入組件](https://ithelp.ithome.com.tw/articles/10221577)
 {% endhint %}
 
-## &#x20;<a href="#e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b" id="e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b"></a>
+### 範例：分檔案拆分 <a href="#e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b" id="e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b"></a>
+
+```jsx
+// 新增./src/WeatherCard.js 或jsx （看專案格式）
+import React from 'react';
+const WeatherCard = () => {
+  return (
+    <WeatherCardWrapper> //原本叫<WeatherCard> 避免衝突改掉
+      {/* 放入原本在父層的東西 */}
+    </WeatherCardWrapper>
+  )
+}
+export default WeatherCard;
+
+// 父層
+//import WeatherCard from './WeatherCard';
+import WeatherCard from './WeatherCard.jsx'; （看專案格式）
+const WeatherApp = () => {
+  return (
+    <ThemeProvider theme={theme[currentTheme]}>
+      <Container>
+        <WeatherCard />
+      </Container>
+    </ThemeProvider>
+  );
+};
+```
+
+### 範例：自己造cusomer hook
+
+* 把要給其他 React 組件使用的資料或方法回傳出去
+* 下面範例跟前述不同不是回傳`<div>  {element}</div>`
+
+```diff
++ // ====新增useWeatherApi.js====
+const useWeatherApi = () => {
+  // STEP 5：把要給其他 React 組件使用的資料或方法回傳出去
++ import {useState, useEffect, useCallback} from 'react';
++ 注意這邊可以搬入所有相關 useState, useEffect, useCallback程式碼
+useEffect(() => {
+    fetchData();
+  }, [fetchData]); //放入函示，該函式需注意要用useCallback
+
+  const [weatherElement, setWeatherElement] = useState({
+
++ return [weatherElement, fetchData];
+};
+export default useWeatherApi;
+
+
++//===套用方接走資料====
++import useWeatherApi from './useWeatherApi';
+// ...
+const WeatherApp = () => {
+  // STEP 2：使用 useWeatherApi Hook 後就能取得 weatherElement 和 fetchData 這兩個方法
++  const [weatherElement, fetchData] = useWeatherApi();
+
+```
 
 ## 網路參考範例: <a href="#e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b" id="e7-b6-b2-e8-b7-af-e5-8f-83-e8-80-83-e7-af-84-e4-be-8b"></a>
 
