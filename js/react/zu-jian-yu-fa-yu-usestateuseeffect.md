@@ -406,4 +406,6 @@ const WeatherApp = () => {
 [React hook](https://zh-hant.reactjs.org/docs/hooks-intro.html) @React 中文解說Hook系列\
 [使用 State Hook](https://zh-hant.reactjs.org/docs/hooks-state.html) @React 中文解說State Hook中寫法對比
 
+[\[Day 25 - 即時天氣\] 自己的鉤子自己做 - 建立 Custom Hook](https://ithelp.ithome.com.tw/articles/10227282)
+
 [^1]: 
