@@ -7,6 +7,7 @@
   * [作用域](js/zuo-yong-yu.md)
   * [函式](js/han-shi.md)
   * [Web API](js/web-api.md)
+  * [匯入](js/hui-ru.md)
   * [常用運算與內建物件](js/chang-yong-yun-suan-yu-nei-jian-wu-jian/README.md)
     * [時間與Math](js/chang-yong-yun-suan-yu-nei-jian-wu-jian/shi-jian-yu-math.md)
     * [陣列](js/chang-yong-yun-suan-yu-nei-jian-wu-jian/zhen-lie.md)
