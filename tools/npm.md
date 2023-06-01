@@ -22,6 +22,18 @@ npm install 後面可以加上其他指令，
 
 
 
+依賴項選項
+
+```
+要在依賴項Dependencies中添加包：
+npm install my_dep --save
+npm install my_dep -S
+//為 npm 5.0.0，默認情況下安裝的模塊作為依賴項添加，因此 --save 選項不再使用
+
+在devDependencies中添加包
+npm install my_test_framework --save-dev
+```
+
 
 
 解安裝
