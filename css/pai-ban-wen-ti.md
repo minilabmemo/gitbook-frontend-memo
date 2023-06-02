@@ -15,3 +15,7 @@ description: 排版問題
 {% hint style="info" %}
 塊的上外邊距(margin-top)和下外邊距(margin-bottom)有時合併(折疊)為單個邊距，其大小為單個邊距的最大值，這種行為稱為邊距折疊。
 {% endhint %}
+
+### 　當物件設定abosolute之後的置中方式
+
+* [幾個我自己常用的水平置中或垂直置中的方式](https://ithelp.ithome.com.tw/articles/10228762)
