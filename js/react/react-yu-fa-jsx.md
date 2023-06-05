@@ -226,7 +226,35 @@ const b = 26900 && 24900;
 + )}d
 ```
 
+#### 常用範例：當滑鼠滑到時出現某個效果
 
+{% embed url="https://upmostly.com/tutorials/react-onhover-event-handling-with-examples" %}
+
+```
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [isShown, setIsShown] = useState(false);
+
+  return (
+    <div className="App">
+      <button
+        onMouseEnter={() => setIsShown(true)}
+        onMouseLeave={() => setIsShown(false)}>
+        Hover over me!
+      </button>
+      {isShown && (
+        <div>
+          I'll appear when you hover over the button.
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default App;
+```
 
 ### 迴圈重複渲染
 
