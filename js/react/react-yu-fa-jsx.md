@@ -226,6 +226,33 @@ const b = 26900 && 24900;
 + )}d
 ```
 
+#### 三元判斷
+
+{條件？（組件）：（組件）}
+
+* 記得要加上（） 否則會錯誤
+
+```
+
+ {props.item.image !== undefined && props.item.image !== '' ? (
+
+        <img src={props.item.image} alt={props.item.name} width="100%" ></img>
+
+      ) : (
+        <>
+          {props.item.imageNode}
+        </>
+      )
+      
+      //可以單獨用 {props.item.imageNode} 但不知道為什麼包進三元子要用加<></>
+      
+      
+```
+
+####
+
+####
+
 #### 常用範例：當滑鼠滑到時出現某個效果
 
 {% embed url="https://upmostly.com/tutorials/react-onhover-event-handling-with-examples" %}
