@@ -17,6 +17,10 @@
 * 引用時不知道為什麼 他提示的命名不可以用,另外引入方式不是用global而是獨立的
 * 問題未解：icon看到的樣式有些微不同.... 騙人啊！
 
+{% hint style="warning" %}
+這樣一來還是自己匯入svg 來的一致？
+{% endhint %}
+
 ````diff
 ```json
  "@fortawesome/fontawesome-svg-core": "^6.4.0",
