@@ -23,7 +23,7 @@
     * [React + typescript](js/react/react-+-typescript.md)
     * [Developer-Tools](js/react/developer-tools.md)
     * [eslint](js/react/eslint.md)
-    * [MUI/styles](js/react/mui-styles.md)
+    * [MUI/styles](js/react/mui.md)
 
 ## css
 
