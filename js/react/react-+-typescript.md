@@ -67,3 +67,71 @@ interface FooProps {
 
 
 ref : [\[掘竅\] 了解這些，更快掌握 TypeScript 在 React 中的使用（Using TypeScript in React）](https://pjchender.blogspot.com/2020/07/typescript-react-using-typescript-in.html)\
+
+
+### React.ReactNode
+
+範例
+
+<pre class="language-diff"><code class="lang-diff">
+var items = [
+    {
+      name: "Random Name #1",
+      description: "Probably the most random thing you have ever seen!",
+      image: undefined,
+      imageNode:
+<strong>+       &#x3C;img alt="stack overflow" src={main_img_1}>&#x3C;/img>
+</strong>
+    },
+    {
+      name: "Random Name #2",
+      description: "Hello World!",
+      image: '',
+      imageNode: &#x3C;>
+        &#x3C;img alt="stack overflow" src={'https://picsum.photos/id/22/900/325'}>&#x3C;/img>
+      &#x3C;/>
+    },
+    {
+      name: "Random Name #3",
+      description: "Hello World!",
+      image: 'https://picsum.photos/id/123/900/325',
+      imageNode: &#x3C;img alt="stack overflow" src={''}>&#x3C;/img>
+    }
+  ]
+
+
+
+{
+        items.map((item, i) => &#x3C;Item key={i} item={item} />)
+      }
+
+`
+function Item(props: { 
+item: { name: string; description: string; image: string | undefined;
++ imageNode: React.ReactNode }; }) {
+  return (
+    &#x3C;Paper sx={{
+      width: "1000px",
+      margin: "0 auto",/*TBD not woerked */
+      boxShadow: '0 0px 0px #ccc', /*close boxShadow */
+
+    }}>
+      {/* {props.item.image != undefined ? (&#x3C;img src={props.item.image} alt={props.item.name} width="100%" >&#x3C;/img>) : ({ props.item.imageNode })} */}
+      {/* {props.item.imageNode} */}
+      {props.item.image !== undefined &#x26;&#x26; props.item.image !== '' ? (
+
+        &#x3C;img src={props.item.image} alt={props.item.name} width="100%" >&#x3C;/img>
+
+      ) : (
+        &#x3C;>
++         {props.item.imageNode}
+        &#x3C;/>
+      )}
+      
++ {props.item.imageNode}
+    &#x3C;/Paper>
+  )
+}
+```
+
+</code></pre>
