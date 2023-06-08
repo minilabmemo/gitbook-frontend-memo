@@ -17,3 +17,13 @@ chrome& firefox 上協助開發者debug的插件:React-Developer-Tools
 ![](<../../.gitbook/assets/image (2).png>)
 
 > 備註 做拆分後有出現過devTools讀不到檔案出現異常timeout狀況,這時重開就可以了
+
+## css-in-js
+
+### css-in-js plugin
+
+css-in-js [plugin](https://marketplace.visualstudio.com/items?itemName=paulmolluzzo.convert-css-in-js) 照說明可以做轉換 或自動完成 但txs測試沒作用？
+
+### styled-components
+
+Styled Components has moved! Make sure you're downloading it from here: [https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components)
