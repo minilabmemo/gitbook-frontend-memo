@@ -135,3 +135,48 @@ item: { name: string; description: string; image: string | undefined;
 ```
 
 </code></pre>
+
+### css-in-js
+
+<pre class="language-diff"><code class="lang-diff">```typescriptreact
+<strong>
+</strong>interface TooltipPropsWapperTypes {
+  childrenSize: {
+    width: number,
+    height: number
+  },
+
+//有用到styled要加
+- const TooltipWrapper = styled.div
++ const TooltipWrapper = styled.div&#x3C;TooltipPropsWapperTypes>`
+top: ${(props) => props.position ? props.position.top : 0}px;
+
+
+
+//MAP參數範例
+type placementStyleMapType = {
++  [key: string]: RuleSet&#x3C;TooltipPropsWapperTypes>;
+};
+
+- const placementStyleMap{
++ const placementStyleMap: placementStyleMapType = {
+  top: topStyle,
+  'top-left': topLeftStyle,
+  }
+  
+
+  //有用到css不用 
+  //但提示會顯示這是一個  RuleSet&#x3C;TooltipPropsWapperTypes 如果有其他地方要用到這串變成參數要加
+  const topStyle = css`
+   color:black;
+   transform: translate(
+    calc(${(props: TooltipPropsWapperTypes) => props.childrenSize.width / 2}px - 50%),
+  `
+  
+  // const TooltipWrapper = styled.div
+const TooltipWrapper = styled.div&#x3C;TooltipPropsWapperTypes>`
+  animation: ${(props) => (props.isVisible ? fadeIn : fadeOut)} .3s ease-in-out forwards;
+  ${(props) => placementStyleMap[props.placement] || placementStyleMap.top}
+}
+`;
+</code></pre>
