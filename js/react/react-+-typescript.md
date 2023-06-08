@@ -39,6 +39,8 @@ TypeScript 編寫的檔案都以 `.ts` 為字尾，如果是用 TypeScript 編�
 
 ## 開始撰寫
 
+`:type` 或是 `?:type` (非必填)
+
 ### 範例 props type的改法
 
 ```diff
