@@ -8,23 +8,70 @@ description: npm (Node Package Manager)
 
 ```
 npm install
+//npm i或npm install xxx 就可以安裝一些東西，產生node_modules
+npm install 這個指令其實會下載兩樣東西~ 首先是這個package(套件)本身，再來就是他的dependency。
+npm install 後面可以加上其他指令，
+
+
 npm start
+
+
 npm init 用來創造package.json
 npm init -y 用默認值初始化
 *想要un-init 就刪掉package.json
+```
 
-npm i或npm install xxx 就可以安裝一些東西，產生node_modules
+### node版本
+
+```
+$ node -v
+v14.17.0
+```
+
+#### 錯誤提示
+
+有時候下指令安裝一堆東西時出現此錯誤 \`error glob-promise@6.0.2: The engine "node" is incompatible with this module. Expected version ">=16". Got "14.17.0"\`
+
+* 可以依照這篇說明去升級 或是有其他略過方式（沒試過）
+* [the-engine-node-is-incompatible-with-this-module](https://stackoverflow.com/questions/56617209/the-engine-node-is-incompatible-with-this-module)
 
 
-npm install 這個指令其實會下載兩樣東西~ 首先是這個package(套件)本身，再來就是他的dependency。
-npm install 後面可以加上其他指令，
+
+#### 升級node版本
+
+[How To Update Node Versions Using Mac, Windows, and Linux](https://blog.hubspot.com/website/update-node-js)
+
+```sh
+// 使用 brew 無用
+// 使用上述方法1 npm升級
+ ~ npm install -g n  
+/usr/local/bin/n -> /usr/local/lib/node_modules/n/bin/n
++ n@9.1.0
+added 1 package from 2 contributors in 1.278s
+➜  ~ n latest
+  installing : node-v20.3.0
+       mkdir : /usr/local/n/versions/node/20.3.0
+mkdir: /usr/local/n: Permission denied
+
+  Error: sudo required (or change ownership, or define N_PREFIX)
+
+➜  ~ sudo n latest
+Password:
+  installing : node-v20.3.0
+       mkdir : /usr/local/n/versions/node/20.3.0
+       fetch : https://nodejs.org/dist/v20.3.0/node-v20.3.0-darwin-x64.tar.xz
+     copying : node/20.3.0
+   installed : v20.3.0 (with npm 9.6.7)
+➜  ~ node -v
+v20.3.0
+
 ```
 
 
 
 ### 依賴項選項
 
-```
+```sh
 要在依賴項Dependencies中添加包：
 npm install my_dep --save
 npm install my_dep -S
