@@ -231,6 +231,51 @@ Bottom.args = {
 ```
 ````
 
+## 優點
+
+{% hint style="info" %}
+採用這個可以從畫面上的control頁直接操控變數args,不用去從程式碼上面一直改,也可以找出不合理的地方
+
+```typescriptreact
+XX showArrow?: boolean | null, //我真的這樣寫
+OO showArrow?: boolean , 其實只有兩種
+畫面就會幫你變成切換開關的設定
+```
+{% endhint %}
+
+## 進階設定
+
+### 自訂control中下拉選項 argTypes
+
+
+
+{% hint style="danger" %}
+* 這邊要注意打錯字看不到效果,也沒有錯誤出現
+* 但應該會有提示文字 照提示文字打
+{% endhint %}
+
+````
+xxx.stories.tsx
+```typescriptreact
+export default {
+  title: 'MyComponentName',
+  component: Tooltip,
+  // 調整 story 的呈現的位置， https://storybook.js.org/docs/react/configure/story-layout
+  parameters: {
+    layout: 'centered',
+  },
+  
+  //https://storybook.js.org/docs/react/essentials/controls
+  argTypes: {
+    myPropsName: {
+      options: ['1', '2'],
+      control: { type: "select" }
+    },
+  }
+} as Meta<typeof MyComponentName>;
+```
+````
+
 ### 設定decorators
 
 ```
@@ -252,14 +297,4 @@ https://storybook.js.org/docs/react/writing-stories/decorators
     
 ```
 
-## 優點
-
-{% hint style="info" %}
-採用這個可以從畫面上的control頁直接操控變數args,不用去從程式碼上面一直改,也可以找出不合理的地方
-
-```typescriptreact
-XX showArrow?: boolean | null, //我真的這樣寫
-OO showArrow?: boolean , 其實只有兩種
-畫面就會幫你變成切換開關的設定
-```
-{% endhint %}
+##
