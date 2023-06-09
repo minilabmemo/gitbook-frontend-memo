@@ -231,9 +231,28 @@ Bottom.args = {
 ```
 ````
 
-### 優點
+### 設定decorators
 
+```
+.storybook/preview.tsx
+https://storybook.js.org/docs/react/writing-stories/decorators
 
+你可以修改這格檔案decorators來改變story被生成的全域設定  例如全域樣式 置中顯示之類的
+
+//傳入Story與放置位置
+ decorators: [
+    (Story) => (
+      <ThemeProvider theme="default">
+        {/* 
+👇
+ Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
+        <Story />
+      </ThemeProvider>
+    ),
+    
+```
+
+## 優點
 
 {% hint style="info" %}
 採用這個可以從畫面上的control頁直接操控變數args,不用去從程式碼上面一直改,也可以找出不合理的地方
