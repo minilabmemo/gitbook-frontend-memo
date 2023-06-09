@@ -173,3 +173,74 @@ Check.args = {
   label: 'Check',
 };
 ```
+
+#### 較新的寫法 tsx
+
+````
+```typescriptreact
+
+export default {
+  title: 'Tooltip',
+  component: Tooltip,
+  // 調整 story 的呈現的位置， https://storybook.js.org/docs/react/configure/story-layout
+  parameters: {
+    layout: 'centered',
+  },
+} as Meta<typeof Tooltip>;
+
+export const Raw = () => (
+  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 160, width: 300 }}>
+
+    <Tooltip
+      content={<div><div>Tooltip</div><div>test!</div></div>}
+      placement="top"
+      gap={12}
+      color={'red'}
+    >
+      <Button variant="outlined">
+        Bottom Raw
+      </Button>
+
+    </Tooltip>
+
+  </div >
+);
+
+//Template 寫法 這裡面參數在畫面上是可以改的
+const Template: StoryFn<typeof Tooltip> = (args) => (
+  <Tooltip
+    {...args}
+  >
+    <Button variant="outlined">
+      Buttom
+    </Button>
+
+  </Tooltip>
+
+);
+
+//置換 Template 的參數
+export const Bottom = Template.bind({});
+Bottom.args = {
+  placement: 'bottom',
+  content: <div><div>Tooltip</div><div>test!</div></div>,
+  showArrow: true
+};
+
+
+```
+````
+
+### 優點
+
+
+
+{% hint style="info" %}
+採用這個可以從畫面上的control頁直接操控變數args,不用去從程式碼上面一直改,也可以找出不合理的地方
+
+```typescriptreact
+XX showArrow?: boolean | null, //我真的這樣寫
+OO showArrow?: boolean , 其實只有兩種
+畫面就會幫你變成切換開關的設定
+```
+{% endhint %}
