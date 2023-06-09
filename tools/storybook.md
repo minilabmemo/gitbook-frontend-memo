@@ -26,6 +26,7 @@ npm create vite@latest 你的專案名稱 -- --template react && npm install
 * \`npx storybook@latest init\` at 官方 [https://storybook.js.org/docs/react/get-started/install/](https://storybook.js.org/docs/react/get-started/install/)
 * \`npm sb init\` at web
 * \`npx sb init --builder @storybook/builder-vite\` at youtuber&#x20;
+* \`npx -p [@storybook/cli](http://twitter.com/storybook/cli) sb init\`
 
 ```
 $ npx sb init
@@ -115,3 +116,60 @@ https://storybook.js.org/telemetry
 <strong>http://localhost:6006/?path=/story/example-button--secondary
 </strong></code></pre>
 
+
+
+## 範例
+
+可以看我儲存的github網路上的範例．
+
+#### 用js寫的範例
+
+[https://braedongough.medium.com/how-to-add-storybook-to-a-typescript-create-react-app-project-28aa99c9943e](https://braedongough.medium.com/how-to-add-storybook-to-a-typescript-create-react-app-project-28aa99c9943e)
+
+```
+/1-Button.stories.js
+import React from 'react';
+import { action } from '@storybook/addon-actions';
+import { Button } from '@storybook/react/demo';
+
+export default {
+  title: 'Button',
+  component: Button,
+};
+
+export const Text = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+
+export const Emoji = () => (
+  <Button onClick={action('clicked')}>
+    <span role="img" aria-label="so cool">
+      😀 😎 👍 💯
+    </span>
+  </Button>
+);
+```
+
+#### 用tsx寫的範例
+
+[https://dev.to/sanchithasr/how-to-implement-storybook-in-react-typescript-material-ui-application-4om7](https://dev.to/sanchithasr/how-to-implement-storybook-in-react-typescript-material-ui-application-4om7)
+
+```
+import TextButton from "./Button"
+import { ComponentMeta, ComponentStory} from "@storybook/react"
+
+export default {
+    title: "Components/Button",
+    component: TextButton,
+} as ComponentMeta<typeof TextButton>
+
+const Template: ComponentStory<typeof TextButton> = (args) => <TextButton {...args} />;
+
+export const Submit = Template.bind({});
+Submit.args = {
+  label: 'Button',
+};
+
+export const Check = Template.bind({});
+Check.args = {
+  label: 'Check',
+};
+```
