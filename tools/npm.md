@@ -4,7 +4,7 @@ description: npm (Node Package Manager)
 
 # npm
 
-### 指令
+## 指令
 
 ```
 npm install
@@ -22,7 +22,7 @@ npm install 後面可以加上其他指令，
 
 
 
-依賴項選項
+### 依賴項選項
 
 ```
 要在依賴項Dependencies中添加包：
@@ -36,7 +36,7 @@ npm install my_test_framework --save-dev
 
 
 
-解安裝
+### 解安裝
 
 ```
 *命令之後想要un-init還必須刪除該node_modules
@@ -44,7 +44,7 @@ npm uninstall -D 套件 這指令則是會把套件從package.json刪除 但是n
 
 ```
 
-#### 參考
+### 參考
 
 |                                                                                                                        |                                                                                                    |
 | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -57,5 +57,17 @@ npm uninstall -D 套件 這指令則是會把套件從package.json刪除 但是n
 | [如何用 npm uninstall 删除一个开发依赖项](https://www.freecodecamp.org/chinese/news/npm-uninstall-how-to-remove-a-package/)        | npm uninstall -D                                                                                   |
 
 \
-\
-\
+
+
+## yarn安裝
+
+```shell
+# install yarn CLI globally
+$ npm install -g yarn
++ yarn@1.22.19
+added 1 package in 0.983s
+
+#get the package's version
+$ yarn --version
+1.22.19
+```

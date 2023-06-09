@@ -24,7 +24,7 @@
     * [Developer-Tools](js/react/developer-tools.md)
     * [eslint](js/react/eslint.md)
     * [MUI/styles](js/react/mui.md)
-    * [ReactDOM 1](js/react/reactdom-1.md)
+    * [ReactDOM](js/react/reactdom.md)
 
 ## css
 
