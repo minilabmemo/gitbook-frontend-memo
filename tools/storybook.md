@@ -90,9 +90,24 @@ https://storybook.js.org/telemetry
 
 這邊安裝有報一些錯 不過還是有成功，之後再看。TODO
 
-#### 生成
+### 生成檔案與指令
 
 完成後會多出.storybook與 src/stories 這裡面有很多預設的範例,可以刪掉自己創建
+
+````diff
+```json
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
++    "eject": "react-scripts eject",
++    "storybook": "storybook dev -p 6006",
++    "build-storybook": "storybook build"
+  },
+```
+````
 
 ## 啟動
 
