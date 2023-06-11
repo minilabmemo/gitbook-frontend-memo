@@ -95,6 +95,41 @@ https://storybook.js.org/telemetry
 
 完成後會多出.storybook與 src/stories 這裡面有很多預設的範例,可以刪掉自己創建
 
+#### detail
+
+<details>
+
+<summary>main.ts</summary>
+
+````
+```typescript
+import type { StorybookConfig } from "@storybook/react-webpack5";
+const config: StorybookConfig = {
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/preset-create-react-app",
+    "@storybook/addon-interactions",
+  ],
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {},
+  },
+  docs: {
+    autodocs: "tag",
+  },
+  staticDirs: ["../public"],
+};
+export default config;
+
+```
+````
+
+</details>
+
+
+
 ````diff
 ```json
   "scripts": {
@@ -297,4 +332,26 @@ https://storybook.js.org/docs/react/writing-stories/decorators
     
 ```
 
-##
+## 設定docs區域
+
+我設定的版本 在main.js裡面有一個`docs: {autodocs: "tag",}` 發現只要在stories裡面去設定tag即可打開,不需要再裝任何addons。
+
+* 打開autodocs 就會發現頁面上多一個docs頁,這一頁會集合所有Sories,然後右下角很神奇的出現show code, 就可以看到套用的程式碼了。
+* 如果想要自訂show code的呈現就要改成parameters.docs.source 去自訂，不過我覺得上述就夠用了。
+
+````diff
+```typescriptreact
+export default {
+  title: 'XXX',
+  component: ',
+  // 調整 story 的呈現的位置， https://storybook.js.org/docs/react/configure/story-layout+
++  tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+    docs: {
+      source: {
+        code: ` <XXX>....</XXX>` }
+    }
+  },
+```
+````
