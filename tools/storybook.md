@@ -1,3 +1,7 @@
+---
+description: Storybook 7.0.20
+---
+
 # storybook
 
 ## 專案
@@ -93,7 +97,7 @@ https://storybook.js.org/telemetry
 
 ### 生成檔案與指令
 
-完成後會多出.storybook與 src/stories 這裡面有很多預設的範例,可以刪掉自己創建
+完成後會多出.storybook與 src/stories 這裡面有很多預設的範例,可以刪掉自己創建。
 
 #### detail
 
@@ -128,7 +132,9 @@ export default config;
 
 </details>
 
+<details>
 
+<summary>package.json</summary>
 
 ````diff
 ```json
@@ -145,13 +151,17 @@ export default config;
 ```
 ````
 
+
+
+</details>
+
 ## 啟動
 
 <pre><code>npm run storybook
 <strong>http://localhost:6006/?path=/story/example-button--secondary
 </strong></code></pre>
 
-
+啟動就會看到頁面了，從About中可以看到對應版本  Storybook 7.0.20
 
 ## 範例
 
