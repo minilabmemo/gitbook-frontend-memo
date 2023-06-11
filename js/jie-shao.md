@@ -42,6 +42,69 @@ JavaScript 是個特殊的語言，嚴格說起來它是 Prototype-based[^2] 的
 
 &#x20;
 
+## debug
+
+### 對 JS debug 對 JS <a href="#e5-b0-8d-js-debug-e5-b0-8d-js" id="e5-b0-8d-js-debug-e5-b0-8d-js"></a>
+
+* 先安裝 JavaScript Debugger (Nightly), 後續會用到 node js
+* vscode 說明 [Debugging](https://code.visualstudio.com/docs/editor/debugging), 他是教用`${workspaceFolder}\\app.js`
+  * 但這樣會報以下錯誤
+
+```
+Note: Using the "preview" debug extension
+/usr/local/bin/node ./../simple_js_demo\app.js
+Process exited with code 1
+Uncaught Error Error: Cannot find module '/Users/yiyin/dev/front/javascript/simple_js_demo\app.js'
+    at Module._resolveFilename (<node_internals>/internal/modules/cjs/loader.js:885:15)
+    at Module._load (<node_internals>/internal/modules/cjs/loader.js:730:27)
+    at executeUserEntryPoint (<node_internals>/internal/modules/run_main.js:72:12)
+    at <anonymous> (<node_internals>/internal/main/run_main_module.js:17:47)
+```
+
+* [variables-reference](https://code.visualstudio.com/docs/editor/variables-reference)
+  * ${workspaceFolder} - 在 VS Code 中打開的文件夾的路徑
+  * ${fileDirname} - 當前打開文件的文件夾路徑
+
+launch.json 設定如下
+
+* 第一種是要自己先執行,再按下 debug 先開啟瀏覽器,這種方式我覺得跟 debug html 在瀏覽器差不多,有點麻煩
+* 第二種 是多資料夾下的`app.js`, 我習慣用這個來執行不同資料夾下的 JS
+* 第三種 是本地資料夾放的`app.js`
+
+```
+{
+  // 使用 IntelliSense 以得知可用的屬性。
+  // 暫留以檢視現有屬性的描述。
+  // 如需詳細資訊，請瀏覽: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "對 localhost 啟動 Chrome",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Open JS",
+      "program": "${fileDirname}/app.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program ROOT JS",
+      "program": "app.js"
+    }
+  ]
+]
+}
+```
+
+\
+
+
 
 
 [^1]: 

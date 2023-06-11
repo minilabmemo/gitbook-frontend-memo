@@ -21,7 +21,7 @@
     * [組件語法與useState/useEffect](js/react/zu-jian-yu-fa-yu-usestateuseeffect.md)
     * [hook](js/react/hook.md)
     * [React + typescript](js/react/react-+-typescript.md)
-    * [開發者debug](js/react/kai-fa-zhe-debug.md)
+    * [開發者debug](js/react/developer-tools.md)
     * [eslint](js/react/eslint.md)
     * [MUI/styles](js/react/mui.md)
     * [ReactDOM](js/react/reactdom.md)
