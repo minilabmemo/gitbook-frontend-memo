@@ -138,7 +138,7 @@ item: { name: string; description: string; image: string | undefined;
 
 </code></pre>
 
-### css-in-js
+### css-in-js. & MAP參數範例
 
 <pre class="language-diff"><code class="lang-diff">```typescriptreact
 <strong>
