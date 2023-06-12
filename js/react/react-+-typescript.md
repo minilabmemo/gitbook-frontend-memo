@@ -140,6 +140,9 @@ item: { name: string; description: string; image: string | undefined;
 
 ### css-in-js. & MAP參數範例
 
+* const XXXWrapper = styled.div 裡面沒有用到參數就不管
+* const XXXWrapper = styled.div<mark style="background-color:blue;">\<T></mark>\` 有用到props就要寫type
+
 <pre class="language-diff"><code class="lang-diff">```typescriptreact
 <strong>
 </strong>interface TooltipPropsWapperTypes {
