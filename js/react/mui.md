@@ -54,3 +54,28 @@ export default function Test() {
   );
 }
 ```
+
+#### style-component
+
+````diff
+
++發現props可以一直傳到下面去
+```typescriptreact
+const OverlayWrapper = styled.div<OverlayWrapperProps>`
+  ${(props: OverlayWrapperProps) => placementStyleMap[props.placement] || placementStyleMap.top};
+`;
+
++placementStyleMap 裡面可以對應到另一種type, 這裡面用到的參數不可以與OverlayWrapperProps有衝突
+
+```
+
+-但是有一次使用isOpen,雖然可以執行 但一直跳出紅色的錯誤log,
+React does not recognize the `isOpen` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `disabledbackgroundcolor` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+
++isOpen 一直叫我全部小寫, 參考網路文章說明 要加上＄isOpen. 錯誤就消失了
+
+//參考：
+https://styled-components.com/docs/api#transient-props
+如果你想防止本應由樣式化組件使用的 props 傳遞到底層 React 節點或渲染到 DOM 元素，你可以在 prop 名稱前加上美元符號 ( )，將其轉換為瞬態 prop $。
+https://juejin.cn/post/7109726822622822436
+````
