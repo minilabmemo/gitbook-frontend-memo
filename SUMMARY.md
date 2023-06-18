@@ -54,3 +54,4 @@
   * [parcel](tools/deploy/parcel.md)
   * [docker](tools/deploy/docker.md)
 * [storybook](tools/storybook.md)
+* [jest](tools/jest.md)
