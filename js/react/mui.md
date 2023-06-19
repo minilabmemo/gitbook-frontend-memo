@@ -79,3 +79,7 @@ https://styled-components.com/docs/api#transient-props
 如果你想防止本應由樣式化組件使用的 props 傳遞到底層 React 節點或渲染到 DOM 元素，你可以在 prop 名稱前加上美元符號 ( )，將其轉換為瞬態 prop $。
 https://juejin.cn/post/7109726822622822436
 ````
+
+
+
+不知道為什麼沒有辦法在裡面同時使用theme/props 不知道怎麼加 TBD
