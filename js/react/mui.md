@@ -82,4 +82,121 @@ https://juejin.cn/post/7109726822622822436
 
 
 
-不知道為什麼沒有辦法在裡面同時使用theme/props 不知道怎麼加 TBD
+#### 同時使用theme/props&#x20;
+
+* 問ＡＩ的寫法，重點是引用i mport { Theme } from '@emotion/react';去做擴展
+* 但是包的時候不能包到其他人的物件,否則會因為也有人用了theme導致type異常,TBD
+
+````
+```typescriptreact
+interface ThemeActiveProps {
+  theme?: Theme;
+  btnType: ButtonType;
+  disabled: boolean;
+}
+
+const ThemeActive = styled.div<ThemeActiveProps>`
+${buttonStyle};
+  ${(props) => setStyle(props.theme, props.btnType, props.disabled)};
+`;
+
+
+```
+
+```typescriptreact
+import { Theme } from '@emotion/react';
+
+//https://emotion.sh/docs/typescript  #Define a Theme
+// By default, props.theme is an empty object because it's the only thing that is type-safe as a default.
+//  You can define a theme type by extending our type declarations via your own declarations file.
+declare module '@emotion/react' {
+  export interface Theme {
+    sectionColor: string;
+    typeColor: string;
+    primeColor: string;
+    secondColor: string;
+    descColor: string;
+
+    selectBtn: {
+      active: {
+        background: string,
+        text: string,
+      }
+      inActive: {
+        background: string,
+        text: string
+      }
+    },
+    saveBtn: {
+      active: {
+        background: string,
+        text: string,
+      }
+      inActive: {
+        background: string,
+        text: string
+      }
+    },
+    searchBtn: {
+      background: string,
+      text: string
+    },
+  }
+}
+export const theme = (): Theme => ({
+  sectionColor: '#FFFFFF',
+  primeColor: '#144480',
+  secondColor: '#E0F4FF',
+  typeColor: '#175FBF',
+  descColor: '#494949',
+  selectBtn: {
+    active: {
+      background: '#5AC1F9',
+      text: '#FAFAFA',
+    },
+    inActive: {
+      background: '#F3F3F3',
+      text: '#CBCBCB',
+    },
+  },
+  saveBtn: {
+    active: {
+      background: '#5AC1F9',
+      text: '#FAFAFA',
+    },
+    inActive: {
+      background: '#F3F3F3',
+      text: '#CBCBCB',
+    },
+  },
+  searchBtn: {
+    background: '#175FBF',
+    text: '#FAFAFA',
+  },
+});
+
+```
+
+
+```typescriptreact
+import { ThemeProvider } from '@emotion/react'
+import { theme } from '../style/theme';
+`
+const Template: StoryFn<typeof TypeButton> = (args) => {
+  const [isDog, setIsDog] = useState(args.isActive)
+  return (
+    <ThemeProvider theme={theme}>
+      <TypeButton
+        isActive={isDog}
+        setActive={setIsDog}
+        text={args.text}
+        iconActive={args.iconActive}
+        iconInActive={args.iconInActive}
+        btnType='select'
+      />
+    </ThemeProvider>
+  )
+};
+
+```
+````
