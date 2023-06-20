@@ -23,3 +23,7 @@ main {
 * 使用其他插件stylelingt 要把設定關掉&#x20;
   * 參考這篇[stylelint-in-vscode](https://stackoverflow.com/questions/71955851/stylelint-wont-mark-errors-in-vscode) （不知道為何對我沒用 TBD)
   * 演示效果可以參考官網demo
+
+#### Code Spell Checker
+
+變數拼字檢查
