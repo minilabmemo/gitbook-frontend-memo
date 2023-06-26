@@ -14,6 +14,12 @@ description: 操作
 
 將光標懸停在其他對像上時按住 alt 或 option 鍵 Figma 將顯示到其它對象邊緣的距離。
 
+#### autoLayout
+
+如果希望控制距離的數字，把物件變成frame（點選autolayout就會變），然後就可以調整數字了。
+
+![](<../../.gitbook/assets/image (1).png>)
+
 ### 播放
 
 按鍵盤Ｒ可以重新播放

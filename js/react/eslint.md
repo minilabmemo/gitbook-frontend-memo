@@ -6,7 +6,7 @@ description: '### eslint prop-types problem提示紅字'
 
 如果有用eslint專案檢查，雖然可以跑，但程式碼回出現問題提示與紅色波浪
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 解法：[jsx-eslint-eslint-plugin-react-react-props-is-missing-in-props-validation-error/](https://lightrun.com/solutions/jsx-eslint-eslint-plugin-react-react-props-is-missing-in-props-validation-error/)
 
