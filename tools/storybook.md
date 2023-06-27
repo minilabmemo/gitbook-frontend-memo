@@ -324,7 +324,7 @@ export default {
 ### 設定decorators
 
 ```
-.storybook/preview.tsx
+.storybook/preview.ts
 https://storybook.js.org/docs/react/writing-stories/decorators
 
 你可以修改這格檔案decorators來改變story被生成的全域設定  例如全域樣式 置中顯示之類的
@@ -341,6 +341,32 @@ https://storybook.js.org/docs/react/writing-stories/decorators
     ),
     
 ```
+
+### 設定初始設定
+
+如果有需要import一些global css設定，不用每一個stories都加，就改進preview.ts 就可以了。
+
+````diff
+```typescript
+import type { Preview } from "@storybook/react";
++import '../src/style/App.css';
++import '../src/style/notosanstc.css';
+const preview: Preview = {
+  parameters: {
+    actions: { argTypesRegex: "^on[A-Z].*" },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
+    },
+  },
+};
+
+export default preview;
+
+```
+````
 
 ## 設定docs區域
 
