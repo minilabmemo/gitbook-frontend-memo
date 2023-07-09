@@ -4,6 +4,10 @@ description: 語法
 
 # React 語法 JSX
 
+## 基礎介紹文章紀錄 <a href="#jsx" id="jsx"></a>
+
+{% embed url="https://minilabmemo.github.io/2021/02/27/react03-component-props/#more" %}
+
 ## JSX <a href="#jsx" id="jsx"></a>
 
 看起來是 <mark style="background-color:orange;">**html 與 JS 混合使用，比較接近 JavaScript 而不是 HTML**</mark>，ＪＳＸ允許你使用 JavaScript 所有的功能。
