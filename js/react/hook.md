@@ -253,9 +253,27 @@ const RefExample = () => {
 }
 ```
 
+## 重複的問題
 
+### 無限迴圈
+
+之前用了一個usecallback 去呼叫ａｐｉ,結果造成無限次呼叫,原本以為會不會跟api回傳值有關,但其實是因為**只有當 dependencies 有改變時，useCallback 才會回傳一個新的函式，而我參數放了一些陣列進去，網路上有一些**关于react的useEffect的依赖比较问题，在hook的底层源码是用`Object.is`来进行浅比较的 use-deep-compare-effect深比较解读，或建議使用`JSON.stringify等等。see` useeffect-comparing-objects:
+
+### 重複渲染
+
+state改變就會引起重新渲染,在創建參數時要注意是否有必要使用usestate去設置參數。
+
+````
+```typescriptreact
+  // const [isDataFound, setIsDataFound] = useState(false);
+    const isDataFound = (petData.records.length > 0) ? true : false;
+```
+````
 
 #### reference
 
 * [什麼時候該使用 useMemo 跟 useCallback](https://medium.com/ichef/%E4%BB%80%E9%BA%BC%E6%99%82%E5%80%99%E8%A9%B2%E4%BD%BF%E7%94%A8-usememo-%E8%B7%9F-usecallback-a3c1cd0eb520)
 * [关于React函数组件的一些日常调试与性能优化技巧](https://juejin.cn/post/6987561807002992677) 待看
+* [https://pjchender.dev/react-bootcamp/docs/book/ch5/5-8/](https://pjchender.dev/react-bootcamp/docs/book/ch5/5-8/)了解定義函式的適當位置以及 useCallback 的使用
+* [https://juejin.cn/post/7166820515078733860](https://juejin.cn/post/7166820515078733860) use-deep-compare-effect深比较解读
+* [https://stackoverflow.com/questions/54095994/react-useeffect-comparing-objects](https://stackoverflow.com/questions/54095994/react-useeffect-comparing-objects) eact-useeffect-comparing-objects
