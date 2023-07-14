@@ -103,7 +103,7 @@ const Hello = () => {
 }
 ```
 
-***
+
 
 ## State的用法 <a href="#state-e7-9a-84-e7-94-a8-e6-b3-95" id="state-e7-9a-84-e7-94-a8-e6-b3-95"></a>
 
@@ -206,7 +206,7 @@ ReactDOM.render(
 
 </code></pre>
 
-***
+
 
 **（延伸說明）hooks 與 Function Component**
 
@@ -231,7 +231,7 @@ ReactDOM.render(
 from \[Day 11 - 網速轉換器] 那個...資料可以分享給我嗎 - 將資料傳入組件
 {% endhint %}
 
-***
+
 
 ## 生命週期 <a href="#e7-94-9f-e5-91-bd-e9-80-b1-e6-9c-9f" id="e7-94-9f-e5-91-bd-e9-80-b1-e6-9c-9f"></a>
 
@@ -258,7 +258,7 @@ Ref:
   * 很多待細讀 ＴＢＤ
   * 我們建議使用 exhaustive-deps 規則作為我們 eslint-plugin-react-hooks package 的一部分。當不正確地指定依賴時，它會發出警告，並提出修改建議。
 
-***
+
 
 ## 組件拆分
 
