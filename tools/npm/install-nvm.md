@@ -1,10 +1,16 @@
 # install nvm
 
-安裝nvm for mac
+## 安裝nvm for mac
 
+```
 brew install nvm
+```
 
 
+
+### 改設定
+
+加上source $(brew --prefix nvm)/nvm.sh
 
 ```
 vi ~/.bash_profile 
@@ -26,6 +32,8 @@ source $(brew --prefix nvm)/nvm.sh
 
 
 
+### node版本列表
+
 ➜  \~ nvm ls-remote
 
 ```
@@ -38,6 +46,24 @@ source $(brew --prefix nvm)/nvm.sh
         v20.4.0
 ```
 
+### 下載與切換
 
+```
+ ~ nvm install v18.16.1
+Downloading and installing node v18.16.1...
+Downloading https://nodejs.org/dist/v18.16.1/node-v18.16.1-darwin-x64.tar.xz...
+######################################################################### 100.0%
+Computing checksum with shasum -a 256
+Checksums matched!
+Now using node v18.16.1 (npm v9.5.1)
+Creating default alias: default -> v18.16.1
+➜  ~ node -v
+v18.16.1
+
+```
+
+
+
+### 參考
 
 &#x20;[Node.js 安裝與版本切換教學 (for MAC)](http://icarus4.logdown.com/posts/175092-nodejs-installation-guide)
