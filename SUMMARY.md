@@ -42,7 +42,7 @@
   * [操作](tools/figma/cao-zuo.md)
 * [npm](tools/npm/README.md)
   * [install nvm](tools/npm/install-nvm.md)
-  * [問題](tools/npm/wen-ti.md)
+  * [npm install出現問題](tools/npm/npm-install-chu-xian-wen-ti.md)
 * [圖庫素材](tools/tu-ku-su-cai.md)
 * [chrome](tools/chrome/README.md)
   * [DevTools](tools/chrome/devtools.md)
