@@ -185,3 +185,9 @@ const TooltipWrapper = styled.div&#x3C;TooltipPropsWapperTypes>`
 }
 `;
 </code></pre>
+
+
+
+### 判斷是否存在
+
+可选链操作符`?.`，这是ECMAScript 2020引入的新特性。 shelter.Capacity?.dog 意思是：如果`shelter.Capacity`对象存在且其属性`dog`也存在，那么就返回`shelter.Capacity.dog`的值；否则，返回`undefined`。
