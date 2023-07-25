@@ -4,6 +4,22 @@ description: 設定
 
 # CSS設定
 
+### 寬度與長度
+
+```
+width: auto 這是預設值，（content+margin+padding+border）相加為父元素的width大小
+width: 100%; 的時候，基本上該物件寬度將會等於是父層"內容的可運用"空間
+*內容可運用空間？其實就是 padding 以內的空間
+
+width: 100vw; 的時候，該物件的大小將會等於是百分之百的「視窗」寬度
+```
+
+`width: 100vw` 很容易造成視窗出現橫向卷軸的問題，所以一般我們在開發網頁時多會使用 `width: 100%` 而非 `width:100vw`
+
+
+
+###
+
 ### 滑鼠的 cursor ​
 
 可以​禁用
