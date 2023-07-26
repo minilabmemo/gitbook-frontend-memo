@@ -96,7 +96,11 @@ Refused to apply style from 'http://127.0.0.1:5500/style.01b3b57d.css' because i
 
 //部署上去也是
    minilabmemo.github.io/:1     GET https://minilabmemo.github.io/style.01b3b57d.css 404
-  
-  解法  加上--public-url ./ 再次開啟就抓到了。
-  "build": "parcel build index.html --out-dir build  --public-url ./  ",
+```
+
+(解法) 加上--public-url ./  可以改成相對路徑 再次開啟就抓到了。
+
+```
+
+    "build": "parcel build index.html --out-dir build  --public-url ./  ",
 ```
