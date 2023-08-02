@@ -36,3 +36,15 @@ description: 排版問題
 2. 調整 CSS 屬性：檢查 `Brand` 元件的 CSS 屬性，特別是 `z-index`、`pointer-events` 等，確保它們不會阻止 `Link` 元件的點擊事件。
 3. 使用 `Link` 元件外部包裹：將 `Brand` 元件放在 `Link` 元件之外，以確保 `Link` 元件能夠正確接收點擊事件。
 
+
+
+### flex-start的整體置中問題
+
+我有一個內容器不固定大小，且裡面的物件靠左排列，但這樣做的話右邊會多出一線不自然的空間，換spaxe-between等等設定又會讓兩個物件也置中了。
+
+類似問題:[CSS 外容器水平置中、內容器的內物件靠左排列問題。](https://ithelp.ithome.com.tw/questions/10209489)
+
+發現是使用外容器 flex 置中，內容器採 grid 排列就解決了。
+
+
+
