@@ -10,7 +10,6 @@
 +// 範例
 const myFirstPromise = new Promise((resolve, reject) => {
   // *執行一些非同步作業，最終呼叫:
-  //
   //   resolve(someValue); // 實現
   // 或
   //   reject("failure reason"); // 拒絕
