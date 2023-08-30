@@ -154,6 +154,11 @@ var p5 = new Promise((resolve, reject) => {
 // }, reason => {
 //   console.log(reason)
 // });
+// 回傳結果
+//p1
+//p2
+//[Promise.all 1~4]:one,two,three,four
+
 
 //一個拒絕
 Promise.all([p1, p2, p3, p4, p5]).then(values => {
