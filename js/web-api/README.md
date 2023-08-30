@@ -97,7 +97,15 @@ $.ajax({
 
 * <mark style="color:red;">**Fetch API 回傳會是個 Promise 物件**</mark>&#x20;
 
-
+```
+fetch('https://xxx/api/')
+    .then((response) => {
+        console.log(response); 
+    })
+    .catch((error) => {
+        console.log(`Error: ${error}`);
+    })
+```
 
 #### 等待多個回傳結果範例：
 
