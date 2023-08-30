@@ -3,11 +3,11 @@
 ## AJAX
 
 {% hint style="info" %}
-**非同步 JavaScript 及 XML（Asynchronous JavaScript and XML，AJAX）** 並不能稱做是種「技術」，而是 2005 年時由 Jesse James Garrett 所發明的術語，描述一種使用數個既有技術的「新」方法。
+**非同步 JavaScript 及 XML（Asynchronous JavaScript and XML，AJAX）** 並不能稱做是種「技術」，而是 2005 年時由 Jesse James Garrett 所發明的術語，描述一種使用數個既有技術的「新」方法。這些技術包括 [HTML](https://developer.mozilla.org/zh-TW/docs/Web/HTML) 或 [XHTML](https://developer.mozilla.org/zh-TW/docs/Glossary/XHTML)、[層疊樣式表](https://developer.mozilla.org/zh-TW/docs/Web/CSS)、[JavaScript](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript)、[文件物件模型](https://developer.mozilla.org/zh-TW/docs/Web/API/Document\_Object\_Model)、[XML (en-US)](https://developer.mozilla.org/en-US/docs/Web/XML)、[XSLT (en-US)](https://developer.mozilla.org/en-US/docs/Web/XSLT) 以及最重要的 [`XMLHttpRequest`](https://developer.mozilla.org/zh-TW/docs/Web/API/XMLHttpRequest) 物件。當這些技術被結合在 Ajax 模型中，Web 應用程式便能快速、即時更動介面及內容，不需要重新讀取整個網頁，讓程式更快回應使用者的操作。
 
 是以[XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using\_XMLHttpRequest)物件(簡稱為**XHR**)為主要核心的實作。
 
-它是用於客戶端對伺服器端送出httpRequest(要求)的物件，使用的資料格式是XML格式(但後來JSON格式才是最為流行的資料格式)。流程即是建立一個XMLHttpRequest(XHR)物件，打開網址然後送出要求，成功時最後由回調函式處理伺服器傳回的Response(回應)。
+它是用於**客戶端對伺服器端送出httpRequest(要求)的物件**，使用的資料格式是XML格式(但後來JSON格式才是最為流行的資料格式)。流程即是建立一個XMLHttpRequest(XHR)物件，打開網址然後送出要求，成功時最後由回調函式處理伺服器傳回的Response(回應)。
 {% endhint %}
 
 * [AJAX MDN](https://developer.mozilla.org/zh-TW/docs/Web/Guide/AJAX/Getting\_Started)
@@ -21,15 +21,15 @@
       .addEventListener("click", makeRequest);
 
     function makeRequest() {
-      httpRequest = new XMLHttpRequest();
++      httpRequest = new XMLHttpRequest();
 
       if (!httpRequest) {
         alert("Giving up :( Cannot create an XMLHTTP instance");
         return false;
       }
-      httpRequest.onreadystatechange = alertContents;
-      httpRequest.open("GET", "test.html");
-      httpRequest.send();
++      httpRequest.onreadystatechange = alertContents;
++      httpRequest.open("GET", "test.html");
++      httpRequest.send();
     }
 
     function alertContents() {
@@ -56,7 +56,7 @@ var response = JSON.parse(httpRequest.responseText);
 ## jQuery
 
 {% hint style="info" %}
-使用像jQuery的函式庫來撰寫AJAX相關功能，解決不同瀏覽器中的不相容問題，或提供簡化語法。jQuery它擴充了原有的XHR物件為jqXHR物件，並加入類似於Promise的介面與Deferred Object(延遲物件)的設計。
+使用像jQuery的函式庫來撰寫AJAX相關功能，**解決不同瀏覽器中的不相容問題，或提供簡化語法**。jQuery它擴充了原有的XHR物件為jqXHR物件，並**加入類似於Promise的介面與Deferred Object(延遲物件)的設計**。
 {% endhint %}
 
 ```
@@ -82,7 +82,7 @@ $.ajax({
 
 ## Fetch API
 
-Fetch是近年來號稱要取代XHR的新技術標準，它是一個HTML5的API，並非來自ECMAScript標準。
+**Fetch**是近年來號稱要取代XHR的新技術標準，它是一個HTML5的API，並非來自ECMAScript標準。
 
 
 
@@ -156,4 +156,6 @@ useEffect(() => {
 [你今天 Promise 了嗎](https://5xruby.tw/posts/promise)&#x20;
 
 [簡單理解 JavaScript Async 和 Await](https://www.oxxostudio.tw/articles/201908/js-async-await.html)
+
+[如何用 Promise 解决回调地狱](https://juejin.cn/post/7065129481513467941) 看起來只是把嵌套回调，修改为了链式调用
 
