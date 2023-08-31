@@ -51,7 +51,7 @@
 * [chrome](tools/chrome/README.md)
   * [DevTools](tools/chrome/devtools.md)
   * [console 操作](tools/chrome/console-cao-zuo.md)
-* [Emmet](tools/emmet.md)
+* [Emmet 快捷](tools/emmet-kuai-jie.md)
 * [vscode](tools/vscode/README.md)
   * [code snippet](tools/code-snippet.md)
 * [deploy](tools/deploy/README.md)
