@@ -39,7 +39,7 @@ ref: [JavaScript 表達式觀念及運用 - JS Expression](https://www.casper.tw
     //console.log(add3(1, 2))//#1 ReferenceError: add3 is not definedr
 ```
 
-### ES6 宣告型態
+### ES6 宣告型態：箭頭函式
 
 ```diff
 +//ES6 : var 函式名稱 = (參數) => {return XX; }
@@ -59,7 +59,7 @@ ref: [JavaScript 表達式觀念及運用 - JS Expression](https://www.casper.tw
 
 ## CPS風格與回調(Callback)
 
-* CPS用的是明確地移轉控制權到下一個函式中，也就是使用"延續函式"的方式，一般稱它為"回調函式"或"回調(Callback)"。回調是一個可以作為傳入參數的函式，用於在目前的函式呼叫執行最後移交控制權，而不使用函式回傳值的方式。
+* **CPS用的是明確地移轉控制權到下一個函式中，也就是使用"延續函式"的方式，一般稱它為"回調函式"或"回調(Callback)"。**回調是一個可以作為傳入參數的函式，用於在目前的函式呼叫執行最後移交控制權，而不使用函式回傳值的方式。
 *
 
     ```js
