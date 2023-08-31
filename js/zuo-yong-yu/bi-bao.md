@@ -4,10 +4,17 @@ description: 閉包
 
 # 閉包
 
+## 資料參考
+
 * [ＭＤＮ 閉包](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Closures)
 * 閉包（Closure）是函式以及該函式被宣告時所在的作用域環境（lexical environment）的組合。
 * [\[JS\] 深入淺出 JavaScript 閉包（closure）](https://pjchender.dev/javascript/js-closure/)
   * 不使用閉包跟使用閉包的差異比較
+  * **當你看到一個 function 內 return 了另一個 function，通常就是有用到閉包的概念**。
+
+###
+
+***
 
 ### 語法作用域（Lexical scoping）
 
