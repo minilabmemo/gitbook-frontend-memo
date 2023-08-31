@@ -11,6 +11,7 @@ description: 閉包
 * [\[JS\] 深入淺出 JavaScript 閉包（closure）](https://pjchender.dev/javascript/js-closure/)
   * 不使用閉包跟使用閉包的差異比較
   * **當你看到一個 function 內 return 了另一個 function，通常就是有用到閉包的概念**。
+  * 圖解：分成 函式內要用到變數/真正要執行函示/把這個函示回傳出去。
 
 ###
 
@@ -34,7 +35,7 @@ myFunc(); . //2
 myFunc(); . //3
 ```
 
-#### 例子2
+### 例子2：相同定義卻不同環境
 
 * add5 與 add10 都是閉包。他們共享函式的定義，卻保有不同的環境：
 
