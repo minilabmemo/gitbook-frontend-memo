@@ -12,6 +12,7 @@ description: 閉包
   * 不使用閉包跟使用閉包的差異比較
   * **當你看到一個 function 內 return 了另一個 function，通常就是有用到閉包的概念**。
   * 圖解：分成 函式內要用到變數/真正要執行函示/把這個函示回傳出去。
+  * 簡化：如果我們熟悉在閉包中會 return 一個 function 出來，我們就可以不必為裡面的函式命名，而是用[匿名函式](https://pjchender.blogspot.tw/2016/03/javascriptfunction-statements-and.html)的方式直接把它回傳出來。
 
 ###
 
