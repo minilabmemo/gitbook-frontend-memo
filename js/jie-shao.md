@@ -15,10 +15,19 @@ JavaScript 是直譯式語言。在直譯式程式語言中，程式碼由上到
 {% hint style="info" %}
 ### JavaScript 是一種物件導向語言嗎？ <a href="#javascript" id="javascript"></a>
 
-JavaScript 是個特殊的語言，嚴格說起來它是 Prototype-based[^2] 的語言，但它寫起來有 FP（Functional Programming）的味道，卻也可以「假裝」成物件導向語言
+JavaScript 是個特殊的語言，嚴格說起來它是基於原型 Prototype-based[^2] 的語言，但它寫起來有 FP（Functional Programming）的味道，卻也可以「假裝」成物件導向語言
 
 [我要學會JS(一)：JavaScript 簡介](https://noob.tw/javascript-introduction/)
 {% endhint %}
+
+* 因為 Javascript 中的特性，根本上基本都是物件，並沒有 class 的概念，所以使用原型的概念來做出類似 類別(class) 的方法。
+* 在 Java 是屬於 **類別繼承，**而 Javascript 則是屬於 **原型繼承**
+*
+
+### **原型鏈**
+
+* &#x20;[繼承與原型鏈 mozilla](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Inheritance\_and\_the\_prototype\_chain)
+* JavaScript 就只有一個建構子：物件。每個物件都有一個連著其他**原型**（prototype）的私有屬性（private property）物件。原型物件也有著自己的原型，於是原型物件就這樣鏈結，直到撞見 `null` 為止：`null` 在定義裡沒有原型、也是**原型鏈**（prototype chain）的最後一個鏈結。
 
 
 
