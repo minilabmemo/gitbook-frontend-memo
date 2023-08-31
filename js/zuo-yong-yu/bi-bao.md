@@ -43,7 +43,7 @@ myFunc(); . //3
 
 ```
 function makeAdder(x) {
-  return function (y) {
+  return function (y) { //匿名函式直接放進來
     return x + y;
   };
 }
