@@ -8,11 +8,11 @@ description: 閉包
 
 * [ＭＤＮ 閉包](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Closures)
 * 閉包（Closure）是函式以及該函式被宣告時所在的作用域環境（lexical environment）的組合。
-* [\[JS\] 深入淺出 JavaScript 閉包（closure）](https://pjchender.dev/javascript/js-closure/)
+* [\[JS\] 深入淺出 JavaScript 閉包（closure）](https://pjchender.dev/javascript/js-closure/)pjchen 很好理解可以看看
   * 不使用閉包跟使用閉包的差異比較
   * **當你看到一個 function 內 return 了另一個 function，通常就是有用到閉包的概念**。
   * 圖解：分成 函式內要用到變數/真正要執行函示/把這個函示回傳出去。
-  * 簡化：如果我們熟悉在閉包中會 return 一個 function 出來，我們就可以不必為裡面的函式命名，而是用[匿名函式](https://pjchender.blogspot.tw/2016/03/javascriptfunction-statements-and.html)的方式直接把它回傳出來。
+  * 簡化：如果我們熟悉在閉包中會 return 一個 function 出來，我們就可以不必為裡面的函式命名，而是用匿名函式的方式直接把它回傳出來。
 
 ###
 
