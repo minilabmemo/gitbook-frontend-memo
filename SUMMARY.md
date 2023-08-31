@@ -2,7 +2,7 @@
 
 * [FE Memo Starting](README.md)
 * [JS](js/README.md)
-  * [介紹](js/jie-shao.md)
+  * [介紹與基礎](js/jie-shao-yu-ji-chu.md)
   * [document](js/document.md)
   * [作用域](js/zuo-yong-yu/README.md)
     * [閉包](js/zuo-yong-yu/bi-bao.md)
