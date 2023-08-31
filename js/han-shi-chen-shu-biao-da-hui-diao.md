@@ -1,4 +1,8 @@
-# 函式
+---
+description: 陳述表達回調
+---
+
+# 函式/陳述表達/回調
 
 ### `Function Statement`(函式陳述句)與`Function Expression`(函式表達式、表示式、 運算式)
 
@@ -88,6 +92,18 @@ ref: [JavaScript 表達式觀念及運用 - JS Expression](https://www.casper.tw
 
 現在已經有很多協助處理的方式，回調地獄可以用例如Promise、generator（少用了？）、async/await之類的語法結構，或是Async、co外部函式庫等，來改善或重構原本的程式碼結構，在往後維護程式碼上會比較容易，這些才是你現在應該就要學習的方式。
 {% endhint %}
+
+
+
+### 參考
+
+* [什麼是Callback函式 (Callback function)](https://medium.com/appxtech/%E4%BB%80%E9%BA%BC%E6%98%AFcallback%E5%87%BD%E5%BC%8F-callback-function-3a0a972d5f82)
+  * 1、讓函式成為另一個函式的參數
+  * 2、讓函式控制參數函式的執行時機
+
+
+
+
 
 
 

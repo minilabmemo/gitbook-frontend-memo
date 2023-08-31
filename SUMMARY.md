@@ -6,7 +6,7 @@
   * [document](js/document.md)
   * [作用域](js/zuo-yong-yu/README.md)
     * [閉包](js/zuo-yong-yu/bi-bao.md)
-  * [函式](js/han-shi.md)
+  * [函式/陳述表達/回調](js/han-shi-chen-shu-biao-da-hui-diao.md)
   * [Web API](js/web-api/README.md)
     * [Promise](js/web-api/promise/README.md)
       * [async, await](js/web-api/promise/async-await.md)
