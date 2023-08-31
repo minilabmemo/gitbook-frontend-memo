@@ -21,13 +21,16 @@ JavaScript 是個特殊的語言，嚴格說起來它是基於原型 Prototype-b
 {% endhint %}
 
 * 因為 Javascript 中的特性，根本上基本都是物件，並沒有 class 的概念，所以使用原型的概念來做出類似 類別(class) 的方法。
-* 在 Java 是屬於 **類別繼承，**而 Javascript 則是屬於 **原型繼承**
+* 在 Java 是屬於 **類別繼承，**在類別裡會有個很特別的函式叫做「建構函式」，他會進行實例的初始化，用來設定一些實例的基礎屬性。而 Javascript 則是屬於 **原型繼承**
 *
 
 ### **原型鏈**
 
 * &#x20;[繼承與原型鏈 mozilla](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Inheritance\_and\_the\_prototype\_chain)
+* [原型繼承與原型鏈 ｜ALPHA Camp](https://javascript.alphacamp.co/prototype-prototype-chain.html)
 * JavaScript 就只有一個建構子：物件。每個物件都有一個連著其他**原型**（prototype）的私有屬性（private property）物件。原型物件也有著自己的原型，於是原型物件就這樣鏈結，直到撞見 `null` 為止：`null` 在定義裡沒有原型、也是**原型鏈**（prototype chain）的最後一個鏈結。
+* JavaScript 物件是一「包」動態的屬性（也就是**它自己**的屬性）並擁有一個原型物件的鏈結，當物件試圖存取一個物件的屬性時，其不僅會尋找該物件，也會尋找該物件的原型、原型的原型……直到找到相符合的屬性，或是到達原型鏈的尾端。
+* ES6 開始就有了 `Class` 語法可以使用，但本質上還是原型
 
 
 
