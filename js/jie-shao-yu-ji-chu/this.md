@@ -12,7 +12,7 @@
     1. 在物件以外的 this 基本上沒有任何意義，硬要輸出的話會給個預設值
     2. 可以用 call、apply 與 bind 改變 this 的值:如下
 
-```
+```javascript
 'use strict';
 function hello(a, b){
   console.log(this, a, b)
@@ -89,6 +89,7 @@ apply與call二者的作用完全一樣，只是第二個參數的接受方式�
 function.call(thisArg, arg1, arg2, ...)
 function.apply(thisArg, [argsArray])
 
+參數1:this指向的目標函式。
 call的第2個參數需要把參數依序傳入，就如同函式的參數。
 apply的第2個參數則必須是一個 array-like object，也就是參數必須以陣列形式傳入。
 
