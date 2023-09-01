@@ -47,6 +47,11 @@ function foo(x,y){
 }
 console.log(foo("!!"))//是!!,undefined
 
+//錯誤的類型函式引用
+let a=5;
+console.log(a.substring(0,3))//TypeError: a.substring is not a function
+//String 的substring() 方法返回该字符串从起始索引到结束索引（不包括）
+
 ```
 
 
