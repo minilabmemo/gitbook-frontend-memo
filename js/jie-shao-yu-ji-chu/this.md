@@ -8,7 +8,9 @@
     1. 嚴格模式底下就都是`undefined`
     2. 非嚴格模式，瀏覽器底下是`window`
     3. 非嚴格模式，node.js 底下是`global`
-  * \`\`\`
+  * 總結
+    1. 在物件以外的 this 基本上沒有任何意義，硬要輸出的話會給個預設值
+    2. 可以用 call、apply 與 bind 改變 this 的值:如下
 
 ```
 'use strict';
@@ -19,12 +21,28 @@ function hello(a, b){
 hello(1, 2) // undefined 1 2
 hello.call(undefined, 1, 2) // undefined 1 2
 hello.apply(undefined, [1, 2]) // undefined 1 2
+
+'use strict';
+function hello(a, b){
+  console.log(this, a, b)
+}
+
+hello.call('yo', 1, 2) // yo 1 2
+hello.apply('hihihi', [1, 2]) // hihihi 1 2
+
+'use strict';
+function hello() {
+  console.log(this)
+}
+
+const myHello = hello.bind('my')
+myHello() // my
 ```
 
 * [this · 從ES6開始的JavaScript學習生活](https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part4/this.html)
   * `this`的指向的是目前呼叫函式或方法的擁有者(owner)物件，也就是說它與函式如何被呼叫或調用有關
 
-```
+```javascript
 function func(param1, param2){
   console.log(this)
 }
@@ -37,6 +55,20 @@ const objA = {
 
 func() //undefined
 objA.test() //Object(objA)
+//func函式在呼叫時的this值是undefined，原本它應該會回傳全域物件，在瀏覽器中就是window物件，
+//這是因為babel預設會開啟strict mode(嚴格模式)，為了安全性的理由，原本的全域物件變成了undefined
+//objA.test方法在呼叫時的this值就是objA物件本身
+//=
+const obj = {
+  value: 1,
+  hello: function() {
+    console.log(this.value)
+  }
+}
+
+obj.hello() // 1
+const hey = obj.hello
+hey() // undefined
 ```
 
 
