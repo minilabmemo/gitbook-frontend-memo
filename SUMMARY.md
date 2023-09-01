@@ -5,6 +5,7 @@
   * [介紹與基礎](js/jie-shao-yu-ji-chu/README.md)
     * [try...catch 語法](js/jie-shao-yu-ji-chu/try...catch-yu-fa.md)
     * [this](js/jie-shao-yu-ji-chu/this.md)
+    * [Page 1](js/jie-shao-yu-ji-chu/page-1.md)
   * [document](js/document.md)
   * [作用域](js/zuo-yong-yu.md)
   * [函式/陳述表達/回調](js/han-shi-chen-shu-biao-da-hui-diao/README.md)
