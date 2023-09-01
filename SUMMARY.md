@@ -31,6 +31,7 @@
     * [ReactDOM](js/react/reactdom.md)
     * [分頁操作](js/react/fen-ye-cao-zuo.md)
   * [問題](js/wen-ti.md)
+  * [try...catch 語法](js/try...catch-yu-fa.md)
 
 ## css
 
