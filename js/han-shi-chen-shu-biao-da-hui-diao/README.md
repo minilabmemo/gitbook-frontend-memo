@@ -95,6 +95,17 @@ ref: [JavaScript 表達式觀念及運用 - JS Expression](https://www.casper.tw
 
 
 
+另外有些會有檢查寫法
+
+```
+var funcA = function(callback){
+// 如果 callback 是個函式就呼叫它
+    if( typeof callback === 'function' ){
+      callback();
+    }
+}
+```
+
 ### 參考
 
 * [什麼是Callback函式 (Callback function)](https://medium.com/appxtech/%E4%BB%80%E9%BA%BC%E6%98%AFcallback%E5%87%BD%E5%BC%8F-callback-function-3a0a972d5f82)
