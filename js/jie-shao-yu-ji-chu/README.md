@@ -32,6 +32,8 @@ JavaScript 是個特殊的語言，嚴格說起來它是基於原型 Prototype-b
 * JavaScript 物件是一「包」動態的屬性（也就是**它自己**的屬性）並擁有一個原型物件的鏈結，當物件試圖存取一個物件的屬性時，其不僅會尋找該物件，也會尋找該物件的原型、原型的原型……直到找到相符合的屬性，或是到達原型鏈的尾端。
 * ES6 開始就有了 `Class` 語法可以使用，但本質上還是原型
 
+<mark style="background-color:red;">找不到本身的屬性才會往.prototype上屬性找</mark>
+
 ```javascript
 // 利用含有 a 與 b 屬性的 f 函式，建立一個 o 物件：
 let f = function () {
