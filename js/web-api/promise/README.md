@@ -11,7 +11,7 @@
 const myFirstPromise = new Promise((resolve, reject) => {
   // *執行一些非同步作業，最終呼叫:
   //   resolve(someValue); // 實現
-  // 或
+  // 或 //注意識貨
   //   reject("failure reason"); // 拒絕
 });
 </code></pre>
@@ -20,6 +20,7 @@ const myFirstPromise = new Promise((resolve, reject) => {
 * \*通常 executor 函式會發起一些非同步操作
 * 成功完成後執行 `resolve` 以完成 promise；或如果有錯誤，執行 `rejects`。 如果 executor 函式在執行中拋出錯誤，promise 會被拒絕（rejected），回傳值也將被忽略。
 * then((successMessage) <mark style="color:red;">僅作為成功訊息，但是它不一定是字串</mark>。
+* 不管是 `resolve` 還是 `reject`，任何一個被觸發後，就會跳脫出 Promise，所以後面的 `resolve` 或是 `reject`，就會被省略掉
 
 ### 基本範例
 
