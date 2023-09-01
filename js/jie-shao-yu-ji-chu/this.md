@@ -82,8 +82,9 @@ hey() // undefined
 
 * [\[筆記\]-JavaScript bind、call、apply是什麼?關於他們的4個重點](https://jianline.com/javascript-bind-call-apply/)
   * 透過bind、apply、call我們可以改變this的指向，來拿到正確的內容
+  * bind會創建一個新的綁定函式，並返回該函式。 apply、call會立即執行綁定的函式。
 
-```
+```javascript
 apply與call二者的作用完全一樣，只是第二個參數的接受方式有所區別。
 function.call(thisArg, arg1, arg2, ...)
 function.apply(thisArg, [argsArray])
@@ -93,12 +94,6 @@ apply的第2個參數則必須是一個 array-like object，也就是參數必�
 
 function.bind(thisArg, arg1, arg2, ...)
 bind是創建一個新的綁定函式，這個函式包裝了原本的函式，並且與第一個參數的this綁定。
-
 經常聽到的currying(柯里化)在使用上經常與bind結合，幫助我們優化許多程式的寫法。
-
-bind會創建一個新的綁定函式，並返回該函式。
-apply、call會立即執行綁定的函式。
 ```
 
-*
-*
