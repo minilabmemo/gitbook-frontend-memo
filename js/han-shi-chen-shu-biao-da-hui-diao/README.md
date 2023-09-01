@@ -106,6 +106,30 @@ var funcA = function(callback){
 }
 ```
 
+[Currying（柯里化](https://www.cythilya.tw/2017/02/27/currying-in-javascript/)
+
+*   是個「將一個接受 n 個參數的 function，轉變成 n 個只接受一個參數的 function」的過程。
+
+    原理是將傳入 function 的參數，利用 closure（閉包）特性，將它們存放在另一個 function 中並當做回傳值，而這些 function 會形成一個鏈（chain），待最後參數傳入，完成運算。
+
+```
+function multiply(x, y){
+  return x * y;
+}
+
+multiply(3, 5); // 15
+//柯里化後就是這樣了…
+function curriedMultiply(x) {
+  return function(y) {
+    return x * y;
+  }
+}
+var multipleOfThreeAndNumberY = curriedMultiply(3);
+
+multipleOfThreeAndNumberY(5); // 15
+multipleOfThreeAndNumberY(10); // 30
+```
+
 ### 參考
 
 * [什麼是Callback函式 (Callback function)](https://medium.com/appxtech/%E4%BB%80%E9%BA%BC%E6%98%AFcallback%E5%87%BD%E5%BC%8F-callback-function-3a0a972d5f82)
