@@ -41,6 +41,7 @@ myHello() // my
 
 * [this · 從ES6開始的JavaScript學習生活](https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part4/this.html)
   * `this`的指向的是目前呼叫函式或方法的擁有者(owner)物件，也就是說它與函式如何被呼叫或調用有關
+  * 對this值來說，它根本不關心函式是在哪裡定義或是怎麼定義的，它只關心是誰呼叫了它。
 
 ```javascript
 function func(param1, param2){
