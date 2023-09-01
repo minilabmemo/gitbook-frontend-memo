@@ -35,6 +35,7 @@
     * [分頁操作](js/react/fen-ye-cao-zuo.md)
   * [問題](js/wen-ti.md)
     * [this問題](js/wen-ti/this-wen-ti.md)
+    * [pass by?](js/wen-ti/pass-by.md)
 
 ## css
 
