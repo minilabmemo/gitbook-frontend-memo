@@ -2,7 +2,9 @@
 
 * [FE Memo Starting](README.md)
 * [JS](js/README.md)
-  * [介紹與基礎](js/jie-shao-yu-ji-chu.md)
+  * [介紹與基礎](js/jie-shao-yu-ji-chu/README.md)
+    * [try...catch 語法](js/jie-shao-yu-ji-chu/try...catch-yu-fa.md)
+    * [this](js/jie-shao-yu-ji-chu/this.md)
   * [document](js/document.md)
   * [作用域](js/zuo-yong-yu/README.md)
     * [閉包](js/zuo-yong-yu/bi-bao.md)
@@ -31,7 +33,6 @@
     * [ReactDOM](js/react/reactdom.md)
     * [分頁操作](js/react/fen-ye-cao-zuo.md)
   * [問題](js/wen-ti.md)
-  * [try...catch 語法](js/try...catch-yu-fa.md)
 
 ## css
 
