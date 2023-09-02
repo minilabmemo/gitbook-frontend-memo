@@ -129,6 +129,10 @@ obj1.arr[0] = 99
 
 S大坑之数据超过2的53次方引发的Number型精度丢失问题
 
+* [JS之路 Day27- JSON Methods(JSON 方法)](https://ithelp.ithome.com.tw/articles/10307819?sc=iThelpR)
+  * 第一`JSON`它只能用雙引號，不能用單引號，不論是`key`還是`value`，物件沒有這種限制，可以用單引號，甚至`key`不要加引號也沒有關係。
+  * 第二`JSON` 支持 `object`、`array`、`string`、`number`、`boolean` 和 `null`，基本上除了`undefined`之外其他全包了
+
 [^1]: 
 
 [^2]: 

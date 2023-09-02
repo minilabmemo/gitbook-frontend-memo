@@ -142,7 +142,8 @@ onclick是要帶入函式 而不是結果！！！
 [ \[Day 08 - 計數器\] 一個不夠，給我一次來十個 - JSX 中迴圈的使用](https://ithelp.ithome.com.tw/articles/10220209) 裡面有詳細圖解
 {% endhint %}
 
-
+* 如果你想要印出 false、true、null 或者 undefined 時，只能先轉為 string
+* [cannot-render-boolean-value-in-jsx](https://stackoverflow.com/questions/38337262/cannot-render-boolean-value-in-jsx)
 
 ### 範例 JSX 引入Inline-style <a href="#e7-af-84-e4-be-8b-jsx-e5-bc-95-e5-85-a5inline-style" id="e7-af-84-e4-be-8b-jsx-e5-bc-95-e5-85-a5inline-style"></a>
 
