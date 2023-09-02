@@ -36,6 +36,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 * component 就像是 JavaScript 的 function，它接收任意的參數（稱之為「props」）[^1]並且回傳畫面的 React element。
 * props 通常是不可變的(唯獨Immutable)，不能修改自己的
+* props 為子組件接受父組件的溝通管道，是唯獨的不可異動
 
 Ref:\[Components 與 Props] ([https://zh-hant.reactjs.org/docs/components-and-props.html](https://zh-hant.reactjs.org/docs/components-and-props.html))
 
@@ -103,11 +104,13 @@ const Hello = () => {
 }
 ```
 
-
+***
 
 ## State的用法 <a href="#state-e7-9a-84-e7-94-a8-e6-b3-95" id="state-e7-9a-84-e7-94-a8-e6-b3-95"></a>
 
 <mark style="color:red;">Props 是唯讀的(Immutable)，State 類似於 prop，但它是私有且由 component 完全控制的。當state被改變時，會進入re-render的update程序，更新畫面</mark>
+
+* state 為自身component 存放資料的地方，管理內部狀態
 
 ### **class(setState) vs **<mark style="background-color:orange;">**function(useState) \[推薦寫法]**</mark>&#x20;
 
@@ -206,7 +209,7 @@ ReactDOM.render(
 
 </code></pre>
 
-
+***
 
 **（延伸說明）hooks 與 Function Component**
 
@@ -231,7 +234,7 @@ ReactDOM.render(
 from \[Day 11 - 網速轉換器] 那個...資料可以分享給我嗎 - 將資料傳入組件
 {% endhint %}
 
-
+***
 
 ## 生命週期 <a href="#e7-94-9f-e5-91-bd-e9-80-b1-e6-9c-9f" id="e7-94-9f-e5-91-bd-e9-80-b1-e6-9c-9f"></a>
 
@@ -258,7 +261,7 @@ Ref:
   * 很多待細讀 ＴＢＤ
   * 我們建議使用 exhaustive-deps 規則作為我們 eslint-plugin-react-hooks package 的一部分。當不正確地指定依賴時，它會發出警告，並提出修改建議。
 
-
+***
 
 ## 組件拆分
 
