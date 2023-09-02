@@ -1,12 +1,6 @@
----
-description: 問題
----
+# 一般
 
-# 問題
-
-
-
-```
+```javascript
 //嘗試印一個不存在index的陣列會？
 const arr=[100];
 console.log(arr[1])//?
@@ -51,8 +45,4 @@ console.log(foo("!!"))//是!!,undefined
 let a=5;
 console.log(a.substring(0,3))//TypeError: a.substring is not a function
 //String 的substring() 方法返回该字符串从起始索引到结束索引（不包括）
-
 ```
-
-
-
