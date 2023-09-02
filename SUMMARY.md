@@ -37,6 +37,7 @@
     * [一般](js/lian-xi/yi-ban.md)
     * [this問題](js/lian-xi/this-wen-ti.md)
     * [pass by?](js/lian-xi/pass-by.md)
+    * [陣列操作](js/lian-xi/zhen-lie-cao-zuo.md)
 
 ## css
 
