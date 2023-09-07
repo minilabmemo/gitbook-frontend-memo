@@ -1,6 +1,6 @@
 # display
 
-### grid:flex
+### display:flex
 
 工具：[https://flexbox.buildwithreact.com/](https://flexbox.buildwithreact.com/)
 
