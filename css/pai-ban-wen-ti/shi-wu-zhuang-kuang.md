@@ -29,6 +29,7 @@ layout:
 ## 　當物件設定abosolute之後的置中方式
 
 * [幾個我自己常用的水平置中或垂直置中的方式](https://ithelp.ithome.com.tw/articles/10228762)
+  * 講得很好包括Margin置中的缺點/區塊與文字置中背後概念
 
 ## 有彈出框的設計卻點了沒反應
 
