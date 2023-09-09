@@ -18,8 +18,7 @@ description: 瀏覽器修正不同
 [浏览器引擎前缀](https://developer.mozilla.org/zh-CN/docs/Glossary/Vendor\_Prefix)：浏览器厂商们有时会给实验性的或者非标准的 CSS 属性和 JavaScript API 添加前缀，这样开发者就可以用这些新的特性进行试验
 
 * Autoprefixer 插件是最流行的 CSS 處理工具之一，用於自動處理瀏覽器兼容性問題
-
-
+* 要確認專案是否有幫你套用或是要自行在webpack配置。
 
 {% hint style="info" %}
 之前提到的LESS、SASS、SCSS 是屬於預處理器（Preprocessors）。
@@ -27,5 +26,7 @@ description: 瀏覽器修正不同
 PostCSS 後處理器（Postprocessors）是一個使用 JavaScript 轉換 CSS 的工具。
 {% endhint %}
 
-
+{% hint style="warning" %}
+reate-react-app 官方已經幫忙[套用Post-Processing CSS](https://create-react-app.dev/docs/post-processing-css/)了：This project setup minifies your CSS and adds vendor prefixes to it automatically through [Autoprefixer](https://github.com/postcss/autoprefixer) so you don’t need to worry about it.
+{% endhint %}
 
