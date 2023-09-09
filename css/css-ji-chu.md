@@ -1,8 +1,8 @@
 ---
-description: 設定
+description: 基礎設定
 ---
 
-# CSS設定
+# CSS基礎
 
 ### 寬度與長度
 
