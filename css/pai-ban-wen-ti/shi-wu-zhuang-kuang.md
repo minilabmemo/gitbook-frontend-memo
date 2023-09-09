@@ -1,8 +1,18 @@
 ---
-description: 排版問題
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-# 排版問題
+# 實務狀況
 
 ### 盒子模型的邊距折疊問題
 

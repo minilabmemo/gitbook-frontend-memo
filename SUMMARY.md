@@ -39,14 +39,15 @@
 
 ## css
 
-* [CSS設定](case/css-she-ding.md)
 * [視差滾動/滑鼠滾動](case/shi-cha-gun-dong-hua-shu-gun-dong.md)
-* [上下位移](case/shang-xia-wei-yi.md)
-* [行內與塊級](css/hang-nei-yu-kuai-ji.md)
+* [CSS設定](case/css-she-ding.md)
+* [排版問題](css/pai-ban-wen-ti/README.md)
+  * [上下位移](css/pai-ban-wen-ti/shang-xia-wei-yi.md)
+  * [行內與塊級](css/pai-ban-wen-ti/hang-nei-yu-kuai-ji.md)
+  * [RWD](css/pai-ban-wen-ti/rwd.md)
+  * [display](css/pai-ban-wen-ti/display.md)
+  * [實務狀況](css/pai-ban-wen-ti/shi-wu-zhuang-kuang.md)
 * [html](css/html.md)
-* [排版問題](css/pai-ban-wen-ti.md)
-* [RWD](css/rwd.md)
-* [display](css/display.md)
 
 ## tools
 
