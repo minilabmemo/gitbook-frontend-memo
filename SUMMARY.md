@@ -49,6 +49,7 @@
   * [視差滾動/滑鼠滾動](css/xiao-guo/shi-cha-gun-dong-hua-shu-gun-dong.md)
   * [上下位移](css/xiao-guo/shang-xia-wei-yi.md)
 * [html](css/html.md)
+* [scss](css/scss.md)
 
 ## tools
 
