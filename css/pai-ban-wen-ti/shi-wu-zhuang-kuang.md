@@ -32,7 +32,11 @@ layout:
   * 講得很好包括Margin置中的缺點/區塊與文字置中背後概念
 * [Top、Right、Bottom、Left - 金魚都能懂的CSS必學屬性](https://ithelp.ithome.com.tw/articles/10253814)
   * 物件如果是absolute要先去設定上下左右為0讓他可以抓到整體空間大小，之後用margin變成居中了。
-* ＴＢＤ 物件如果是absolute寬度會變小 變成自身大小而不是佔據一行？
+* [小技巧：absolute 元素的宽度问题](https://blog.csdn.net/ISaiSai/article/details/45640515)
+  * 当_元素_设置了_absolute_ 后，_默认_就不是100%的_宽度_了，而是内容多宽就是多宽
+  *   物件如果是absolute寬度會變小 變成自身大小而不是佔據一行！
+
+
 
 ## 有彈出框的設計卻點了沒反應
 
