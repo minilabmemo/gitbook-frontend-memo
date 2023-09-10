@@ -25,7 +25,11 @@ width:100%；会强制将元素变成和父元素一样的宽，并且添加额�
 
 比較：[https://codesandbox.io/s/css3-width-x23ykr](https://codesandbox.io/s/css3-width-x23ykr)
 
-###
+### 行高
+
+寫法是 `line-height:1.8;`，行高會依照(該元素設定的文字大小 x 1.8)的結果作計算。
+
+
 
 ### 滑鼠的 cursor ​
 
