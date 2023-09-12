@@ -21,9 +21,12 @@ layout:
 * [MDN CSS 外边距重叠](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS\_box\_model/Mastering\_margin\_collapsing) 會發生的情況說明
 * [子元素margin-top导致父元素移动的问题](https://www.jianshu.com/p/6d9fb5fbbd34) 說明與解法
 * [子元素设置margin-top和margin-bottom无效，外边距折叠导致父元素移动](https://blog.csdn.net/aaahuahua/article/details/115288283)
+* [外边距折叠现象](https://juejin.cn/post/7106424029288300557) 分为两种，一种是外边距合并现象，一种是塌陷现象。這篇解說很清楚
 
 {% hint style="info" %}
 塊的上外邊距(margin-top)和下外邊距(margin-bottom)有時合併(折疊)為單個邊距，其大小為單個邊距的最大值，這種行為稱為邊距折疊。
+
+練習：[https://codesandbox.io/s/margin-issue-child-dlfgct?file=/src/styles.css](https://codesandbox.io/s/margin-issue-child-dlfgct?file=/src/styles.css)
 {% endhint %}
 
 ## 　當物件設定abosolute之後的置中方式
