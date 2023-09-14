@@ -4,6 +4,75 @@ description: 陣列
 
 # 陣列
 
+## 遍尋陣列的方法
+
+*   [JavaScript 遍歷 Array 的四種方法：for、for-in、for-of、forEach()](https://tigercosmos.xyz/post/2021/06/js/js-array-for-methods/)
+
+    * 寫得很好，還有性能分析
+
+
+
+### for迴圈
+
+可以用continue,break,性能最好
+
+### forEach
+
+* (ES5) for的優化寫法
+* 無法用continue,要換成return
+* break可用flag自己控制或是用some(),every()取代，有些人會建議用for迴圈清楚點
+
+### for-in
+
+* (ES1) 拿到key值,但是拿到的非數字而是字串,性能差
+
+### for-of
+
+* 直接得到陣列元素
+* 外加 `for` 可以用 `break`、`continue` 做到更彈性操作
+* &#x20;`for-of` 也可以直接用來遍歷物件
+* 效能稍差於for，但可以做到很多事，有些人偏好這種寫法
+
+<pre class="language-javascript"><code class="lang-javascript">
+//只想拿取元素
+const arr = ['a', 'b', 'c'];
+arr.prop = 'property value';
+
+for (const elem of arr) {
+  console.log(elem);
+}
+// Output:
+// 'a'
+// 'b'
+// 'c'
+
+//同時想要 Array 的 Index &#x26; Value 
+<strong>const arr = ['chocolate', 'vanilla', 'strawberry'];
+</strong>
+for (const [index, value] of arr.entries()) {
+  console.log(index, value);
+}
+// Output:
+// 0, 'chocolate'
+// 1, 'vanilla'
+// 2, 'strawberry'
+
+//物件
+const myMap = new Map()
+  .set(false, 'no')
+  .set(true, 'yes');
+
+for (const [key, value] of myMap) {
+  console.log(key, value);
+}
+
+// Output:
+// false, 'no'
+// true, 'yes'
+</code></pre>
+
+##
+
 ## **Object.entries()**
 
 * Object.entries(obj)**.XXX** 取得所有 property 的 name 和 value，並以陣列回傳
