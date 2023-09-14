@@ -33,6 +33,19 @@ description: 操作
 * &#x20;`for-of` 也可以直接用來遍歷物件
 * 效能稍差於for，但可以做到很多事，有些人偏好這種寫法
 
+{% hint style="info" %}
+**`for...of`语句**在[可迭代对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration\_protocols)（包括 [`Array`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global\_Objects/Array)，[`Map`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global\_Objects/Map)，[`Set`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global\_Objects/Set)，[`String`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global\_Objects/String)，[`TypedArray`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray)，[arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions\_and\_function\_scope/arguments) 对象等等）上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句
+
+```jsx
+const array1 = ['a', 'b', 'c'];
+
+for (const element of array1) {
+  console.log(element);
+}
+
+```
+{% endhint %}
+
 <pre class="language-javascript"><code class="lang-javascript">
 //只想拿取元素
 const arr = ['a', 'b', 'c'];
@@ -101,22 +114,46 @@ for (const [key, value] of Object.entries(object1)) {
 
 ## ARRAY對象
 
+### Array.prototype.push()/pop()
+
+**`push()`** 方法會添加一個或多個元素至陣列的末端，並且回傳陣列的新長度。
+
+**`pop()`** 方法會移除並回傳陣列的**最後一個**元素。此方法會改變陣列的長度。
+
+```
+const animals = ['pigs', 'goats', 'sheep'];
+
+const count = animals.push('cows');
+console.log(count);
+// Expected output: 4
+console.log(animals);
+// Expected output: Array ["pigs", "goats", "sheep", "cows"]
+
+animals.push('chickens', 'cats', 'dogs');
+console.log(animals);
+// Expected output: Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
+
+```
+
+###
+
 ### entries
 
 **`entries()`** 方法會回傳一個包含陣列中每一個索引之鍵值對（key/value pairs）的新陣列迭代器（**`Array Iterator`**）物件。
 
-{% hint style="info" %}
-**`for...of`语句**在[可迭代对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration\_protocols)（包括 [`Array`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global\_Objects/Array)，[`Map`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global\_Objects/Map)，[`Set`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global\_Objects/Set)，[`String`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global\_Objects/String)，[`TypedArray`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray)，[arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions\_and\_function\_scope/arguments) 对象等等）上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句
+#### 常與for-of做使用
 
-```jsx
-const array1 = ['a', 'b', 'c'];
-
-for (const element of array1) {
-  console.log(element);
-}
-e
 ```
-{% endhint %}
+var a = ["a", "b", "c"];
+var iterator = a.entries();
+
+for (let e of iterator) {
+  console.log(e);
+}
+// [0, 'a']
+// [1, 'b']
+// [2, 'c']
+```
 
 
 
@@ -181,5 +218,65 @@ arr.reduce(callback[accumulator, currentValue, currentIndex, array], initialValu
 #### 範例
 
 #### [計算相同元素數量並以物件鍵值顯示](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global\_Objects/Array/Reduce#%E8%A8%88%E7%AE%97%E7%9B%B8%E5%90%8C%E5%85%83%E7%B4%A0%E6%95%B8%E9%87%8F%E4%B8%A6%E4%BB%A5%E7%89%A9%E4%BB%B6%E9%8D%B5%E5%80%BC%E9%A1%AF%E7%A4%BA) 這個範例就很像是把array變成累積map去做計算便回傳拿到結果 <a href="#ji-suan-xiang-tong-yuan-su-shu-liang-bing-yi-wu-jian-jian-zhi-xian-shi" id="ji-suan-xiang-tong-yuan-su-shu-liang-bing-yi-wu-jian-jian-zhi-xian-shi"></a>
+
+
+
+### Array.prototype.every()
+
+**`every()`** 方法测试一个数组内的所有元素是否都能通过指定函数的测试。它返回一个布尔值。
+
+```
+const isBelowThreshold = (currentValue) => currentValue < 40;
+
+const array1 = [1, 30, 39, 29, 10, 13];
+
+console.log(array1.every(isBelowThreshold));
+// Expected output: true
+
+```
+
+### Array.prototype.some()
+
+**`some()`** 方法测试数组中是否至少有一个元素通过了由提供的函数实现的测试。如果在数组中找到一个元素使得提供的函数返回 true，则返回 true；否则返回 false。它不会修改数组。
+
+* 检测在数组中是否有元素大于 10之類的條件。
+
+```
+const array = [1, 2, 3, 4, 5];
+
+// Checks whether an element is even
+const even = (element) => element % 2 === 0;
+
+console.log(array.some(even));
+// Expected output: true
+
+```
+
+### Array.prototype.includes()
+
+**`includes()`** 方法用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 `true`，否则返回 `false`。
+
+```
+//語法
+includes(searchElement)
+includes(searchElement, fromIndex)
+
+const array1 = [1, 2, 3];
+
+console.log(array1.includes(2));
+// Expected output: true
+[1, 2, 3].includes(2); // true
+[1, 2, 3].includes(4); // false
+[1, 2, 3].includes(3, 3); // false
+[1, 2, 3].includes(3, -1); // true
+[1, 2, NaN].includes(NaN); // true
+["1", "2", "3"].includes(3); // false
+
+
+//你可以在稀疏数组中搜索 undefined，得到 true 。
+console.log([1, , 3].includes(undefined)); // true
+```
+
+#### [在非数组对象上调用 includes() 方法](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global\_Objects/Array/includes#%E5%9C%A8%E9%9D%9E%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E4%B8%8A%E8%B0%83%E7%94%A8\_includes\_%E6%96%B9%E6%B3%95) <a href="#zai-fei-shu-zu-dui-xiang-shang-tiao-yong-includes-fang-fa" id="zai-fei-shu-zu-dui-xiang-shang-tiao-yong-includes-fang-fa"></a>
 
 [^1]: 
