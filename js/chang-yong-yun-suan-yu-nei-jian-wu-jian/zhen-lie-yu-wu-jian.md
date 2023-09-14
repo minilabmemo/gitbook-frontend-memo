@@ -1,8 +1,8 @@
 ---
-description: 陣列
+description: 操作
 ---
 
-# 陣列
+# 陣列與物件
 
 ## 遍尋陣列的方法
 
