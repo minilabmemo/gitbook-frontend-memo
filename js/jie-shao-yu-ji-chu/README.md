@@ -6,7 +6,7 @@ description: 與基礎介紹
 
 ### **直譯式** (**interpreted** )與\*\*編譯式 (compiled)\*\*
 
-JavaScript 是直譯式語言。在直譯式程式語言中，程式碼由上到下執行，而且執行的結果是立即回應得到的。在瀏覽器執行前，你不需要將程式轉換為其它的形式。程式碼的內容是以對程式人員友善的形式並直接能夠運作。大多數現代的 JavaScript 直譯器實際上會使用一種稱為\*\*即時編譯（just-in-time compiling）\*\*的技術來提升執行表現。 JavaScript 被使用時，原始程式會被編譯成更快的二進位格式，讓它們能更有效率的運行。然而，[ <mark style="color:red;">JavaScript 仍然被認為是一種直譯式的程式語言，因為編譯動作是在程式運作時，而不是事先完成。</mark>](#user-content-fn-1)[^1]
+JavaScript 是直譯式語言。在直譯式程式語言中，程式碼由上到下執行，而且執行的結果是立即回應得到的。在瀏覽器執行前，你不需要將程式轉換為其它的形式。程式碼的內容是以對程式人員友善的形式並直接能夠運作。**大多數現代的 JavaScript 直譯器實際上會使用一種稱為\*\*即時編譯（**just-in-time compiling）\*\***的技術來提升執行表現**。 JavaScript 被使用時，原始程式會被編譯成更快的二進位格式，讓它們能更有效率的運行。然而，[ <mark style="color:red;">JavaScript 仍然被認為是一種直譯式的程式語言，因為編譯動作是在程式運作時，而不是事先完成。</mark>](#user-content-fn-1)[^1]
 
 
 
@@ -15,7 +15,7 @@ JavaScript 是直譯式語言。在直譯式程式語言中，程式碼由上到
 {% hint style="info" %}
 ### JavaScript 是一種物件導向語言嗎？ <a href="#javascript" id="javascript"></a>
 
-JavaScript 是個特殊的語言，嚴格說起來它是基於原型 Prototype-based[^2] 的語言，但它寫起來有 FP（Functional Programming）的味道，卻也可以「假裝」成物件導向語言
+JavaScript 是個特殊的語言，嚴格說起來它是基於原型 Prototype-based[^2] 的語言，但它**寫起來有 FP（Functional Programming）的味道，卻也可以「假裝」成物件導向語言**
 
 [我要學會JS(一)：JavaScript 簡介](https://noob.tw/javascript-introduction/)
 {% endhint %}
@@ -28,11 +28,11 @@ JavaScript 是個特殊的語言，嚴格說起來它是基於原型 Prototype-b
 
 * &#x20;[繼承與原型鏈 mozilla](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Inheritance\_and\_the\_prototype\_chain)
 * [原型繼承與原型鏈 ｜ALPHA Camp](https://javascript.alphacamp.co/prototype-prototype-chain.html)
-* JavaScript 就只有一個建構子：物件。每個物件都有一個連著其他**原型**（prototype）的私有屬性（private property）物件。原型物件也有著自己的原型，於是原型物件就這樣鏈結，直到撞見 `null` 為止：`null` 在定義裡沒有原型、也是**原型鏈**（prototype chain）的最後一個鏈結。
+* JavaScript 就只有一個建構子：物件。每個物件都有一個連著其他**原型**（prototype）的私有屬性（private property）物件。原型物件也有著自己的原型，於是原型物件就這樣鏈結，**直到撞見 `null` 為止：`null` 在定義裡沒有原型、也是原型鏈（**prototype chain）的最後一個鏈結。
 * JavaScript 物件是一「包」動態的屬性（也就是**它自己**的屬性）並擁有一個原型物件的鏈結，當物件試圖存取一個物件的屬性時，其不僅會尋找該物件，也會尋找該物件的原型、原型的原型……直到找到相符合的屬性，或是到達原型鏈的尾端。
 * ES6 開始就有了 `Class` 語法可以使用，但本質上還是原型
 
-<mark style="background-color:red;">找不到本身的屬性才會往.prototype上屬性找</mark>
+<mark style="background-color:red;">找不到本身的屬性</mark><mark style="background-color:red;">**才會**</mark><mark style="background-color:red;">往.prototype上屬性找</mark>
 
 ```javascript
 // 利用含有 a 與 b 屬性的 f 函式，建立一個 o 物件：
@@ -83,7 +83,7 @@ console.log(o.d); // undefined
 不同的 runtime 會提供不同的東西，你要很清楚現在是在哪個 runtime
 
 * JavaScript 需要有地方執行，而這個地方就叫做執行環境（runtime），舉個例子，大家最常用的 runtime 就是「瀏覽器」。做的功能自然而然就會受到瀏覽器限制 （資安CORS等等）
-* 除了瀏覽器以外，JavaScript 還有另一個 runtime 叫做 Node.js，JavaScript 程式碼可以脫離瀏覽器執行
+* **除了瀏覽器以外，JavaScript 還有另一個 runtime 叫做 Node.js，JavaScript 程式碼可以脫離瀏覽器執行**
 
 {% hint style="info" %}
 [從「為什麼不能用這個函式」談執行環境（runtime）](https://blog.huli.tw/2022/02/09/javascript-runtime/)
