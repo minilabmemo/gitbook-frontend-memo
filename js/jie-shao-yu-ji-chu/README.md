@@ -31,6 +31,8 @@ JavaScript 是個特殊的語言，嚴格說起來它是基於原型 Prototype-b
 * JavaScript 就只有一個建構子：物件。每個物件都有一個連著其他**原型**（prototype）的私有屬性（private property）物件。原型物件也有著自己的原型，於是原型物件就這樣鏈結，**直到撞見 `null` 為止：`null` 在定義裡沒有原型、也是原型鏈（**prototype chain）的最後一個鏈結。
 * JavaScript 物件是一「包」動態的屬性（也就是**它自己**的屬性）並擁有一個原型物件的鏈結，當物件試圖存取一個物件的屬性時，其不僅會尋找該物件，也會尋找該物件的原型、原型的原型……直到找到相符合的屬性，或是到達原型鏈的尾端。
 * ES6 開始就有了 `Class` 語法可以使用，但本質上還是原型
+* new 後面其實就是一個函式
+  * 有沒有ｎｅｗ的差別以及this可以看這篇[\[JavaScript\] new的用法與基本概念](https://dotblogs.com.tw/acelee/2017/06/22/135553)
 
 <mark style="background-color:red;">找不到本身的屬性</mark><mark style="background-color:red;">**才會**</mark><mark style="background-color:red;">往.prototype上屬性找</mark>
 
