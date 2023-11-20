@@ -1,4 +1,8 @@
-# install nvm
+---
+description: 切換版本
+---
+
+# install nvm 切換node版本
 
 ## 安裝nvm for mac
 

@@ -35,7 +35,13 @@ v14.17.0
 * 可以依照這篇說明去升級 或是有其他略過方式（沒試過）
 * [the-engine-node-is-incompatible-with-this-module](https://stackoverflow.com/questions/56617209/the-engine-node-is-incompatible-with-this-module)
 
-
+{% code overflow="wrap" %}
+```
+error next@14.0.3: The engine "node" is incompatible with this module. Expected version ">=18.17.0". Got "18.16.1"
+$ node -v
+v18.16.1
+```
+{% endcode %}
 
 #### 升級node版本
 

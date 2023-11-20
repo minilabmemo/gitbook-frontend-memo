@@ -58,7 +58,7 @@
   * [插件工具](tools/figma/cha-jian-gong-ju.md)
   * [操作](tools/figma/cao-zuo.md)
 * [npm](tools/npm/README.md)
-  * [install nvm](tools/npm/install-nvm.md)
+  * [install nvm 切換node版本](tools/npm/install-nvm-qie-huan-node-ban-ben.md)
   * [npm install出現問題](tools/npm/npm-install-chu-xian-wen-ti.md)
 * [圖庫素材](tools/tu-ku-su-cai.md)
 * [chrome](tools/chrome/README.md)
