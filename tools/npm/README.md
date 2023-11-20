@@ -40,10 +40,13 @@ v14.17.0
 error next@14.0.3: The engine "node" is incompatible with this module. Expected version ">=18.17.0". Got "18.16.1"
 $ node -v
 v18.16.1
+改用下一篇nvm 去切換版本
+
+
 ```
 {% endcode %}
 
-#### 升級node版本
+#### 升級node版本 （不用 有時切不過去）
 
 [How To Update Node Versions Using Mac, Windows, and Linux](https://blog.hubspot.com/website/update-node-js)
 
