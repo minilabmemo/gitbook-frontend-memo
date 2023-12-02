@@ -68,6 +68,23 @@ Web API（網頁 API）通常指的是由瀏覽器提供的一組 JavaScript API
 
 微任務和宏任務是 JavaScript 中事件循環的概念，用於區分不同類型的任務和處理它們的順序。微任務通常在宏任務之後執行，而在事件循環的每個宏任務之間進行。
 
+```
+fetch('https://api.example.com/data')
+  .then(response => {
+    // 在這裡處理成功的情況
+    return response.json();
+  })
+  .then(data => {
+    // 在這裡處理解析 JSON 後的數據
+    console.log(data);
+  })
+  .catch(error => {
+    // 在這裡處理錯誤的情況
+    console.error('Fetch error:', error);
+  });
+
+```
+
 在上面提到的 `fetch` 的例子中，<mark style="background-color:orange;">`.then()`</mark> <mark style="background-color:orange;"></mark><mark style="background-color:orange;">和</mark> <mark style="background-color:orange;"></mark><mark style="background-color:orange;">`.catch()`</mark> <mark style="background-color:orange;"></mark><mark style="background-color:orange;">中的代碼確實是在微任務階段執行的。具體來說，當</mark> <mark style="background-color:orange;"></mark><mark style="background-color:orange;">`fetch`</mark> <mark style="background-color:orange;"></mark><mark style="background-color:orange;">返回的 Promise 被解析為成功或失敗時，相應的</mark> <mark style="background-color:orange;"></mark><mark style="background-color:orange;">`.then()`</mark> <mark style="background-color:orange;"></mark><mark style="background-color:orange;">或</mark> <mark style="background-color:orange;"></mark><mark style="background-color:orange;">`.catch()`</mark> <mark style="background-color:orange;"></mark><mark style="background-color:orange;">中的代碼將被放入微任務隊列中，並在當前的宏任務完成後執行。</mark>
 
 簡而言之，`fetch` 本身是一個宏任務，但它返回的 Promise 代碼的執行則是在微任務階段。
