@@ -100,3 +100,47 @@ fetch('https://api.example.com/data')
 微任務通常在宏任務之後執行，並允許 JavaScript 執行緒進行更細粒度的任務調度。這有助於避免長時間運行的任務阻塞事件循環，保持應用程序的反應性。
 
 簡而言之，`Promise` 的使用使得異步操作（例如由 `fetch` 返回的 Promise）可以在微任務階段進行，以提高代碼的效率和應用程序的反應性。
+
+
+
+
+
+### 小錯誤寫法：then裡面要放回調，不然會立即執行
+
+
+
+```javascript
+
+function logB() { console.log('B') }
+function logC() { console.log('C') }
+function logA() { console.log('A') }
+function logD() { console.log('D') }
+function logE() { console.log('E') }
+
+fetch('https://www.google.com')
+  .then(logE());    //錯誤寫法
+
+fetch('https://www.google.com')
+  .then(logE);   //正確寫法
+
+fetch('https://www.google.com')
+  .then(function a() {}); //正確寫法
+
+
+logA();
+setTimeout(logB, 0);
+Promise.resolve().then(logC);
+logD();
+Promise.resolve().then(logE);
+console.log('END')
+
+
+then(logE())：
+logE() 會立即執行，而不是等到 Promise 完成後再執行。
+then 實際上接收到的是 logE 函數的返回值，而不是函數本身。
+then(logE)：
+logE 本身被傳遞給 then，而不是立即執行。
+then 會在 Promise 完成後執行 logE 函數。
+所以，正確的寫法應該是 then(logE)，這樣才能確保 logE 在 fetch 完成後執行。
+```
+
