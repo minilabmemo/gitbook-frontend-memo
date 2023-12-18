@@ -5,7 +5,12 @@
 1. 安裝工具 `npm i gh-pages`
 2. 添加package.json
 
-```diff
+````diff
+```json
+ "homepage": "https://minilabmemo.github.io/f2e-election-person",
+   "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+```
 + "homepage": "https://<youeaccout>.github.io/reponame",  
 
 "scripts": {
@@ -16,7 +21,7 @@
 +    "predeploy": "npm run build", 
 +    "deploy": "gh-pages -d build"
   },
-```
+````
 
 3.執行`npm run deploy`
 
