@@ -67,6 +67,16 @@ printInfos(3, 4);
 
     console.log("ES6:" + Add4(1, 2))//3
     console.log("ES6:" + Add5(1, 2))//3
+    
+    
+//---------------------------
+沒有參數就依錠要加（）
+var AddS3 = () => {"OK"};    //注意這是陳述寫法 
+var AddS4 = () => "OK"; 
+
+console.log("ES6:" + AddS3()) ES6:undefined
+console.log("ES6:" + AddS4()) ES6:OK
+
 ```
 
 ## CPS風格與回調(Callback)
