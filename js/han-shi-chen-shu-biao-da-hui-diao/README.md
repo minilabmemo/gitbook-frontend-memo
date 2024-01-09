@@ -61,12 +61,14 @@ printInfos(3, 4);
 +  //縮寫 如果只有return 可以去掉{}與return
     var Add5 = (A, B) => A + B;
 
+  console.log("ES6:" + Add4(1, 2))//3
+  console.log("ES6:" + Add5(1, 2))//3
+
 +   //縮寫 如果只有一個參數 可以去掉（）
     var AddS1 = (A) => A;
     var AddS2 = A => A;
 
-    console.log("ES6:" + Add4(1, 2))//3
-    console.log("ES6:" + Add5(1, 2))//3
+  
     
     
 //---------------------------
