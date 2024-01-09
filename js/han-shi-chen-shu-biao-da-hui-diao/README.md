@@ -42,6 +42,18 @@ ref: [JavaScript 表達式觀念及運用 - JS Expression](https://www.casper.tw
 ### ES6 宣告型態：箭頭函式
 
 ```diff
+
+ (參數1, 參數2, …, 參數N) => { 陳述式; } 
+const printInfos = (a, b) => {
+  const sum = a + b;
+  console.log(`Sum: ${sum}`);
+};
+
+printInfos(3, 4);
+
+//------------------------------------
+//(參數1, 參數2, …, 參數N) => 表示式;
+// 等相同(參數1, 參數2, …, 參數N) => { return 表示式; }
 +//ES6 : var 函式名稱 = (參數) => {return XX; }
     var Add4 = (A, B) => {
         return A + B;
