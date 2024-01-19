@@ -76,9 +76,64 @@ console.log(o.d); // undefined
 
 
 
-###
+### 創建物件實例和使用實例的屬性和方法的方法
 
-###
+是的，無論是在 ES5 還是 ES6 中，創建物件實例和使用實例的屬性和方法的方法都是相同的。以下是 ES5 和 ES6 兩種寫法的比較：
+
+#### 使用 ES5 寫法：
+
+函數構造器（Function Constructor）是一種特殊的函數，用於創建物件。它是一種使用 `new` 關鍵字來創建新物件的方法，同時可以初始化這個物件的屬性和方法。
+
+```javascript
+// ES5 的方式，使用函數構造器和原型
+
+// 定義 Animal 函數構造器
+var Animal = function(name, age) {
+    this.name = name;
+    this.age = age;
+};
+
+// 在原型上添加方法 makeSound
+Animal.prototype.makeSound = function() {
+    console.log("The animal makes a sound.");
+};
+
+// 創建 Animal 實例 
+// 使用函數構造器創建新的物件實例
+var myAnimal = new Animal("Cat", 3);
+
+// 使用實例的屬性和方法
+console.log(myAnimal.name);      // 輸出: Cat
+console.log(myAnimal.age);       // 輸出: 3
+myAnimal.makeSound();            // 輸出: The animal makes a sound.
+```
+
+#### 使用 ES6 寫法：
+
+```javascript
+// ES6 的方式，使用 class
+
+class Animal {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    makeSound() {
+        console.log("The animal makes a sound.");
+    }
+}
+
+// 創建 Animal 實例
+let myAnimal = new Animal("Cat", 3);
+
+// 使用實例的屬性和方法
+console.log(myAnimal.name);      // 輸出: Cat
+console.log(myAnimal.age);       // 輸出: 3
+myAnimal.makeSound();            // 輸出: The animal makes a sound.
+```
+
+在兩種寫法中，創建 `Animal` 實例的方式都是一樣的，同樣使用 `new Animal()`。而且使用實例的屬性和方法的語法也保持一致。因此，無論使用 ES5 還是 ES6 寫法，這些基本概念都是相同的。
 
 
 
