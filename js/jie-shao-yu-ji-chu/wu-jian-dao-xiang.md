@@ -91,9 +91,11 @@ console.log(o.d); // undefined
 var Animal = function(name, age) {
     this.name = name;
     this.age = age;
+    //雖然也可以把方法寫在這邊 但比較不好
 };
 
 // 在原型上添加方法 makeSound
+// 共享相同方法 節省記憶體。
 Animal.prototype.makeSound = function() {
     console.log("The animal makes a sound.");
 };
@@ -109,6 +111,10 @@ myAnimal.makeSound();            // 輸出: The animal makes a sound.
 ```
 
 #### 使用 ES6 寫法：
+
+雖然在語法上看起來像是使用類別，但實際上它仍然是基於原型繼承的。`class` 語法提供了更清晰、更易讀的方式來定義和使用構造函數及其原型方法，但底層的原理仍然與函數構造器和原型相同。
+
+簡而言之，使用 `class` 語法定義的類別在功能上類似於函數構造器，但在語法上更現代化。
 
 ```javascript
 // ES6 的方式，使用 class
@@ -171,5 +177,17 @@ console.log(myAnimal.name); // 輸出: Cat
 如果在創建實例時沒有使用 `new`，那麼該函數將被視為一個普通的函數調用，並且 `this` 的值將取決於它被調用的上下文。這可能導致意外的行為，因為沒有創建新的物件實例。
 
 簡而言之，`new` 用來標記函數的調用方式，指示該函數應該用作構造函數，創建新的實例。
+
+
+
+### ES5 盡可能不要把方法寫在建構式函式中
+
+## 建構物件範本：Constructor Function <a href="#jian-gou-wu-jian-fan-ben-constructorfunction" id="jian-gou-wu-jian-fan-ben-constructorfunction"></a>
+
+[https://javascript.alphacamp.co/constructor-function.html](https://javascript.alphacamp.co/constructor-function.html)
+
+
+
+
 
 [^1]: 
