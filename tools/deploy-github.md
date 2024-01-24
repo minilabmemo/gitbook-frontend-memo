@@ -23,6 +23,12 @@
   },
 ````
 
+```
+-d 代表資料夾
+gh-pages -d build。//react專案
+gh-pages -d dist   //vue專案
+```
+
 3.執行`npm run deploy`
 
 如果報錯Failed to get remote.origin.url 就代表要先去設定遠端位置
