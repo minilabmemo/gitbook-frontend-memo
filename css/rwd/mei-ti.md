@@ -92,6 +92,21 @@ img {
 
 工具包中還有一個 HTML 元素，可協助您進一步控制圖片：picture 元素。
 
+如果您只需要放送不同大小版本同一張圖片，建議使用 `srcset`。不過，如果圖片在較小的尺寸下無法呈現良好效果，您可以嘗試將圖片裁剪成裁剪版本。
+
 [Day06 X 圖片最佳化](https://ithelp.ithome.com.tw/articles/10268776)
+
+
+
+
+
+更多使用者介面模式
+
+如要進一步瞭解版面配置和 UI 元素模式，請參閱 web.dev 的「[模式](https://web.dev/patterns?hl=zh-tw)」一節。
+
+\
+
+
+{% embed url="https://web.dev/patterns/layout/deconstructed-pancake?hl=zh-tw#css" %}
 
 \
