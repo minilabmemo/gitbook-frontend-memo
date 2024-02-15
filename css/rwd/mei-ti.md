@@ -88,4 +88,10 @@ img {
 \
 
 
+### 圖片 save for later
+
+工具包中還有一個 HTML 元素，可協助您進一步控制圖片：picture 元素。
+
+[Day06 X 圖片最佳化](https://ithelp.ithome.com.tw/articles/10268776)
+
 \
