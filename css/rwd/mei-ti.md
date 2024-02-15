@@ -104,9 +104,16 @@ img {
 
 如要進一步瞭解版面配置和 UI 元素模式，請參閱 web.dev 的「[模式](https://web.dev/patterns?hl=zh-tw)」一節。
 
-\
 
+
+flex 01x 11x的方法比較
 
 {% embed url="https://web.dev/patterns/layout/deconstructed-pancake?hl=zh-tw#css" %}
+
+志中的得獎者
+
+{% embed url="https://web.dev/articles/centering-in-css?hl=zh-tw" %}
+
+
 
 \
