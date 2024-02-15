@@ -8,7 +8,19 @@ description: 媒體查詢
 
 
 
+國際化
+
+save for later
+
+為了配合不同的書寫模式進行調整，請避免使用方向left/right屬性。請改用邏輯屬性。
+
+\
+\
+
+
 ## 文字
+
+根據預設，文字會自動換行，且不含任何其他樣式。
 
 ```
 html {
@@ -45,4 +57,35 @@ blockquote {
 
 ### 正在載入字型 <a href="#font_loading" id="font_loading"></a>
 
-TBD
+save for later
+
+
+
+## 圖片
+
+```
+img {
+  max-inline-size: 100%;   //對應 max-width
+  block-size: auto;  //對應height
+ aspect-ratio: 2/1;   x/y 指定的 width / height 比率
+  object-fit: cover; //會裁切
+  object-position: top center; 保留焦點位置
+}
+```
+
+[逻辑尺寸属性](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS\_logical\_properties\_and\_values/Sizing)
+
+### 尺寸提示 <a href="#sizing_hints" id="sizing_hints"></a>
+
+如果您知道圖片尺寸，請加入 `width` 和 `height` 屬性。即使圖片是以不同大小顯示 (因為 `max-inline-size: 100%` 規則)，瀏覽器依然知道寬度和高度的比例，並且能夠設定正確的空間量。這樣一來，當圖片載入時，其他內容就會停止跳轉。
+
+### 正在載入提示
+
+使用 `loading` 屬性，指示瀏覽器是否要延遲載入圖片，直到圖片位於可視區域範圍內或靠近可視區域。如果是需捲動位置圖片，請使用 `lazy` 的值。瀏覽器要等到使用者向下捲動網頁，直到圖片即將顯示圖片為止，才會載入延遲圖片。如果使用者從未捲動畫面，圖片就不會載入。
+
+對於不需捲動位置的主頁橫幅，請勿使用 `loading`。如果您的網站自動套用 `loading="lazy"` 屬性，通常可以透過設定 `eager` 屬性 (此為預設值) 來避免套用上述屬性：
+
+\
+
+
+\
