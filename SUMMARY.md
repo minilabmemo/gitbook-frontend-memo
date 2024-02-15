@@ -44,9 +44,10 @@
 ## css
 
 * [CSS基礎](css/css-ji-chu.md)
+* [RWD](css/rwd/README.md)
+  * [媒體](css/rwd/mei-ti.md)
 * [排版問題](css/pai-ban-wen-ti/README.md)
   * [行內與塊級](css/pai-ban-wen-ti/hang-nei-yu-kuai-ji.md)
-  * [RWD](css/pai-ban-wen-ti/rwd.md)
   * [display](css/pai-ban-wen-ti/display.md)
   * [實務狀況](css/pai-ban-wen-ti/shi-wu-zhuang-kuang.md)
 * [效果](css/xiao-guo/README.md)

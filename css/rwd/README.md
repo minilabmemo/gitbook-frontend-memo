@@ -2,42 +2,13 @@
 
 ## RWD
 
-Status: Not started
+[https://hackmd.io/fc7Hyyn7RO-SSVC99ze8Rw#%E7%B7%9A%E4%B8%8A%E6%95%99%E5%AD%B8](https://hackmd.io/fc7Hyyn7RO-SSVC99ze8Rw#%E7%B7%9A%E4%B8%8A%E6%95%99%E5%AD%B8)
 
-### 💧影片 金魚
 
-**金魚都能懂網頁設計入門 : 媒體查詢 - 鐵人賽第二十天 【新手網頁教學系列】**
 
-**字級與螢幕寬度字數限制表**
 
-[https://csscoke.com/webq/text-count.html](https://csscoke.com/webq/text-count.html)
 
-```jsx
-@media screen and (min-width: 900px) {
-article {
-padding: 1rem 3rem;
-}
-}
-Media Type媒體類型有哪些?
-all : 預設值，適用所有媒體類型裝置
-print : 適用印刷裝置，包括預覽列印產生的畫面
-screen : 適用於有螢幕的裝置(例如: 電腦螢幕、平板、手機……)
-speech : 適用於可以「讀出」頁面的裝置。
 
-最小寬度是768 螢幕 就是大於768的
-```
-
-viewport加上去
-
-```jsx
-<meta name="viewport" 
-content="width=device-width, 
-initial-scale=1.0,
- maximum-scale=1.0, user-scalable=no">
-
-```
-
-雖然跟媒體查詢無關，但是不加在檢視上會有問題
 
 ### 📑文章
 
