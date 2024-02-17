@@ -10,6 +10,8 @@ JavaScript 是直譯式語言。在直譯式程式語言中，程式碼由上到
 
 
 
+{% embed url="https://www.instagram.com/p/C2JQmheyU-d/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" fullWidth="false" %}
+
 ### 物件導向語言與 FP（Functional Programming）？ <a href="#javascript" id="javascript"></a>
 
 {% hint style="info" %}
